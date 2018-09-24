@@ -1,0 +1,44 @@
+.header_bar{
+    display: flex;
+    background-color: #353638;
+    height: 100px;
+}
+
+.Override_logo{
+    position: absolute;
+    width: auto;
+    height: 100px;
+    top:0;
+    left:0;
+}
+
+.Nav_links{
+    display:flex;
+    position: fixed;
+    align-items: center;
+    top: 100px;
+    right: 10px;
+    height: 100px;
+    width:70vw;
+}
+
+/* unvisited link */
+a:link {
+    color: grey;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: grey;
+}
+
+/* mouse over link */
+a:hover {
+    color: grey;
+}
+
+/* selected link */
+a:active {
+    color: grey;
+}
