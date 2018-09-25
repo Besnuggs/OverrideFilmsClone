@@ -3,6 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios'
 import overridefilmslogo from './../../imgs/overridefilmslogo.jpg'
 import {connect} from 'react-redux'
+import removeFromShopCart from '../../ducks/reducer'
 import './cart.css'
 
 
@@ -11,6 +12,8 @@ class Cart extends Component {
     constructor(props){
         super(props)
             this.state = {
+                productPrice: 0,
+                productimgs: [],
                 amount: 1500
             }
     }
@@ -21,16 +24,18 @@ class Cart extends Component {
             console.log(res)
         })
     }
+
+    updateAmount(){
+
+    }
     
     render() { 
         return (
             <div className="cart">
                 <h1>Shopping Cart</h1>
-
                 <div className="Shoppingtable">
                 <h3>Item Description</h3>
-
-                </div>
+            </div>
 
                 <div className="checkOut table">
                 <h3>Order Summary</h3>
@@ -47,5 +52,6 @@ class Cart extends Component {
           );
     }
 }
- 
+
+
 export default Cart;

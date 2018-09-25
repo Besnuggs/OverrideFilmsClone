@@ -21,13 +21,14 @@ app.use(session({
     saveUninitialized:true
   }))
 // *******AUTH0*******************************//
-app.get(`/auth/callback`, ctrl.login)
-app.get(`/api/user-data`, ctrl.userData) 
-app.get('/logout', ctrl.logout) 
+app.get(`/auth/callback/`, ctrl.login)
+app.get(`/api/user-data/`, ctrl.userData) 
+app.get('/logout/', ctrl.logout) 
 
 
 // ************ENDPOINTS**************** //
 app.get('/api/products/', ctrl.getProducts)
+app.post('/api/cart/')
 
 
 //****************STRIPE*********************** */

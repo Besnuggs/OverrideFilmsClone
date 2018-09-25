@@ -14,6 +14,12 @@ class Shop extends Component {
             itemsInCart: 0,
             itemsGoingToCart: []
             }
+            this.displayAll = this.displayAll.bind(this)
+            this.displayShirts = this.displayShirts.bind(this)
+            this.displayMugs = this.displayMugs.bind(this)
+            this.displayHats = this.displayHats.bind(this)
+            this.displayBags = this.displayBags.bind(this)
+            this.displayStickers = this.displayStickers.bind(this)
     }
 
 componentDidMount(){
@@ -24,10 +30,32 @@ axios.get('/api/products/').then((res) => {
 })
 }
 
-addToCart(){
-axios.post('/api/cart/').then((res) => {
-    this.setState({itemsGoingToCart: res.data})
+displayAll(){
+axios.get('/api/products/').then((res)=> {
+    this.setState({
+        products: res.data
+    })
 })
+}
+
+displayShirts(){
+
+}
+
+displayMugs(){
+
+}
+
+displayHats(){
+
+}
+
+displayBags(){
+
+}
+
+displayStickers(){
+
 }
 
 render(props) {
@@ -51,12 +79,12 @@ addToCart={this.addToCart}
 return (
      <div className="shop">
          <h1>Overridden Films Shop</h1>
-         <button>All</button>
-         <button>Shirts</button>
-         <button>Mugs</button>
-         <button>Hats</button>
-         <button>Bags</button>
-         <button>Stickers</button>
+         <button onClick={this.displayAll}>All</button>
+         <button onClick={this.displayShirts}>Shirts</button>
+         <button onClick={this.displayMugs}>Mugs</button>
+         <button onClick={this.displayHats}>Hats</button>
+         <button onClick={this.displayBags}>Bags</button>
+         <button onClick={this.displayStickers}>Stickers</button>
          {productInfo}
      </div>  
      );

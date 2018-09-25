@@ -1,6 +1,10 @@
 let initialState = {
     products: [],
-    shopCart: []
+    shopCart: [],
+    amount: 0,
+    productimgs: [],
+    itemsInCart: 0,
+    itemsGoingToCart: []
 }
 
 // Action Types
@@ -28,14 +32,14 @@ export function removeFromShopCart(productIndex) {
 function reducer (state=initialState, action){
 switch(action.type){
     case ADD_TO_SHOPPING_CART:
-    let {itemsinCart, price, product_imgs, subtotal, total} = action.payload
+    let {itemsinCart, price, product_imgs, subtotal, amount} = action.payload
     return Object.assign({}, state, 
         {
         itemsinCart: itemsinCart,
         price: price,
         product_imgs: product_imgs,
         subtotal: subtotal,
-        total: total
+        amount: amount
         })
 
 

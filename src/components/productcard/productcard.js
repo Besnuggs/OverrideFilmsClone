@@ -1,5 +1,7 @@
 import React from 'react'
 import './productcard.css'
+import {connect} from 'react-redux'
+import addToShopCart from '../../ducks/reducer'
 
 function ProductCard(props){
     console.log(props)
@@ -16,4 +18,14 @@ return(
     )
 }
 
-export default ProductCard;
+function mapStateToProps(state){
+return{
+
+
+
+}
+}
+
+
+
+export default connect (mapStateToProps, {addToShopCart}) (ProductCard);
