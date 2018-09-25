@@ -3,6 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios'
 import overridefilmslogo from './../../imgs/overridefilmslogo.jpg'
 import {connect} from 'react-redux'
+import './cart.css'
 
 
 
@@ -10,20 +11,20 @@ class Cart extends Component {
     constructor(props){
         super(props)
             this.state = {
-                amount: 1000
+                amount: 1500
             }
     }
 
     onToken = (token) => {
         token.card = void 0
-        axios.post('/api/payment', {token, amount: this.state.amount}).then(res => {
+        axios.post('/api/payment/', {token, amount: this.state.amount}).then(res => {
             console.log(res)
         })
     }
     
     render() { 
         return (
-            <div>
+            <div className="cart">
                 <h1>Shopping Cart</h1>
 
                 <div className="Shoppingtable">

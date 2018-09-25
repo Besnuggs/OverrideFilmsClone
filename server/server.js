@@ -3,9 +3,12 @@ const express = require('express');
 const session = require('express-session');
 const axios = require('axios');
 const massive = require('massive');
-const ctrl = require('./controller')
+const ctrl = require('./controller');
+const bodyParser = require('body-parser')
 
 const app = express();
+app.use(bodyParser.json());
+
 const {
 SERVER_PORT,
 SESSION_SECRET,
@@ -26,8 +29,7 @@ app.use(session({
 
 // ************ENDPOINTS**************** //
 app.get('/api/products/', ctrl.getProducts)
-app.post('/api/cart', ctrl.addToCart)
-app.post('/api/payment', ctrl.handlePayment)
+app.post('/api/payment/', ctrl.handlePayment)
 
 
 

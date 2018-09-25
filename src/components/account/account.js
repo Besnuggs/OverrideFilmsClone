@@ -13,7 +13,7 @@ export default class account extends Component{
 
     render(){
         return(
-            <div className='account'>
+            <div className="account">
             <button onClick={this.login}>Login</button>
 
              <a href='http://localhost:3000/logout'>

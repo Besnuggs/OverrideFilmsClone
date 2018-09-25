@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 import ProductCard from '../productcard/productcard'
+import './shop.css'
 import {connect} from 'react-redux'
 import {addToShopCart} from '../../ducks/reducer'
 
@@ -48,7 +49,7 @@ addToCart={this.addToCart}
 )})
 
 return (
-     <div>
+     <div className="shop">
          <h1>Overridden Films Shop</h1>
          <button>All</button>
          <button>Shirts</button>

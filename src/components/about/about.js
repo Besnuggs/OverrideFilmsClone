@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './about.css'
 import Expertise from '../expertise/expertise'
 import Production from '../production/production'
 

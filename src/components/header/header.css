@@ -12,14 +12,10 @@
     left:0;
 }
 
-.Nav_links{
-    display:flex;
-    position: fixed;
-    align-items: center;
-    top: 100px;
-    right: 10px;
-    height: 100px;
-    width:70vw;
+.links{
+    display:inline-flex;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
 /* unvisited link */

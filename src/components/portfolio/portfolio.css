@@ -1,6 +1,9 @@
+.portfolio{
+    text-align: center;
+}
+
 .videoBox{
     display:flex;
     flex-direction:column;
     flex-wrap: wrap;
-    
 }
