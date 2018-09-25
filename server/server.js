@@ -11,11 +11,7 @@ app.use(bodyParser.json());
 const {
 SERVER_PORT,
 SESSION_SECRET,
-DB_CONNECTION,
-REACT_APP_DOMAIN,
-REACT_APP_CLIENT_ID,
-CLIENT_SECRET
-
+DB_CONNECTION
 } = process.env
 
 //*****************SESSIONS*****************//
