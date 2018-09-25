@@ -6,7 +6,7 @@ import Production from '../production/production'
 class About extends Component {
     render() { 
         return (
-        <div>
+        <div className="about">
             <Expertise />
             <Production />
         </div>  
