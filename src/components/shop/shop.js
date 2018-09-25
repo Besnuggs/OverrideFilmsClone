@@ -39,7 +39,11 @@ axios.get('/api/products/').then((res)=> {
 }
 
 displayShirts(){
-
+axios.get(`/api/products/`).then((res) => {
+    this.setState({
+        products:res.data
+    })
+})
 }
 
 displayMugs(){
@@ -80,11 +84,11 @@ return (
      <div className="shop">
          <h1>Overridden Films Shop</h1>
          <button onClick={this.displayAll}>All</button>
-         <button onClick={this.displayShirts}>Shirts</button>
-         <button onClick={this.displayMugs}>Mugs</button>
+         <button value="2" onClick={this.displayShirts}>Shirts</button>
+         <button value="5" onClick={this.displayMugs}>Mugs</button>
          <button onClick={this.displayHats}>Hats</button>
-         <button onClick={this.displayBags}>Bags</button>
-         <button onClick={this.displayStickers}>Stickers</button>
+         <button value="3" onClick={this.displayBags}>Bags</button>
+         <button value="6" onClick={this.displayStickers}>Stickers</button>
          {productInfo}
      </div>  
      );
