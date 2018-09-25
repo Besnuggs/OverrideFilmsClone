@@ -20,6 +20,7 @@ app.use(session({
     resave: false,
     saveUninitialized:true
   }))
+  
 // *******AUTH0*******************************//
 app.get(`/auth/callback/`, ctrl.login)
 app.get(`/api/user-data/`, ctrl.userData) 
@@ -28,10 +29,16 @@ app.get('/logout/', ctrl.logout)
 
 // ************ENDPOINTS**************** //
 app.get('/api/products/', ctrl.getProducts)
-app.post('/api/cart/')
+app.get('/api/products/shirts', ctrl.getShirts)
+app.get('/api/products/mugs', ctrl.getMugs)
+app.get('/api/products/hats', ctrl.getHats)
+app.get('/api/products/bags', ctrl.getBags)
+app.get('/api/products/stickers', ctrl.getStickers)
+
+app.post('/api/cart/', ctrl.addToCart)
 
 
-//****************STRIPE*********************** */
+//****************STRIPE*******************/
 app.post('/api/payment/', ctrl.handlePayment)
 
 

@@ -13,6 +13,64 @@ getProducts: (req,res,then) => {
             res.status(500).send(err)
         })
     },
+addToCart: (req,res,then) => {
+    console.log(req.session.user.id)
+    let user_id = req.session.user.id
+    let product_id = req.body.id
+    const db = req.app.get('db');
+    db.addToCart(user_id, product_id)
+    .then(cart => {
+        res.status(200).send(cart)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send(err)
+    })
+},
+getShirts: (req,res,then) => {
+        const db = req.app.get('db');
+        db.getShirts().then(products => {
+            res.status(200).send(products)
+        }).catch(err => {
+            console.log(err);
+            res.status(500).send(err)
+        })
+},
+getMugs: (req,res,then) => {
+    const db = req.app.get('db');
+    db.getMugs().then(products => {
+        res.status(200).send(products)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send(err)
+    })
+},
+getBags: (req,res,then) => {
+        const db = req.app.get('db');
+        db.getBags().then(products => {
+            res.status(200).send(products)
+        }).catch(err => {
+            console.log(err);
+            res.status(500).send(err)
+        })
+},
+getHats: (req, res, then) => {
+    const db = req.app.get('db');
+    db.getHats().then(products => {
+        res.status(200).send(products)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send(err)
+    })
+},
+getStickers: (req, res, then) => {
+    const db = req.app.get('db');
+    db.getStickers().then(products => {
+        res.status(200).send(products)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send(err);
+    })
+},
 handlePayment: (req, res) => {
         const { amount, token:{id}} = req.body
         stripe.charges.create(

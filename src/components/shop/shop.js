@@ -12,7 +12,7 @@ class Shop extends Component {
             this.state = {
             products: [],
             itemsInCart: 0,
-            itemsGoingToCart: []
+            Cart: []
             }
             this.displayAll = this.displayAll.bind(this)
             this.displayShirts = this.displayShirts.bind(this)
@@ -30,6 +30,14 @@ axios.get('/api/products/').then((res) => {
 })
 }
 
+addToCart(id){
+axios.post(`/api/cart/`, {id}).then((res) => {
+    this.setState({
+        cart: res.data,
+    })
+})
+}
+
 displayAll(){
 axios.get('/api/products/').then((res)=> {
     this.setState({
@@ -39,7 +47,7 @@ axios.get('/api/products/').then((res)=> {
 }
 
 displayShirts(){
-axios.get(`/api/products/`).then((res) => {
+axios.get(`/api/products/shirts`).then((res) => {
     this.setState({
         products:res.data
     })
@@ -47,19 +55,35 @@ axios.get(`/api/products/`).then((res) => {
 }
 
 displayMugs(){
-
+    axios.get(`/api/products/mugs`).then((res) => {
+        this.setState({
+            products:res.data
+        })
+    })
 }
 
 displayHats(){
-
+    axios.get(`/api/products/hats`).then((res) => {
+        this.setState({
+            products:res.data
+        })
+    })
 }
 
 displayBags(){
-
+    axios.get(`/api/products/bags`).then((res) => {
+        this.setState({
+            products:res.data
+        })
+    })
 }
 
 displayStickers(){
-
+    axios.get(`/api/products/stickers`).then((res) => {
+        this.setState({
+            products:res.data
+        })
+    })
 }
 
 render(props) {
