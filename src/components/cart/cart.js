@@ -16,9 +16,10 @@ class Cart extends Component {
                 productimgs: [],
                 amount: 1500,
                 cartItems: [],
-                subtotal: 5,
+                subtotal: 0,
                 shipping: 5
             }
+        this.deleteProduct = this.deleteProduct.bind(this)
     }
 
     componentDidMount(){
@@ -26,19 +27,19 @@ class Cart extends Component {
             this.setState({
                 cartItems: res.data,
             })
-        })
         let {cartItems} = this.state
-        let subT = 0
+        let subT = 0;
         cartItems.forEach(cartItem => {
-            let costSub = Number(cartItems.price)
-        
-            
-            this.setState({
-                subtotal: subT
-            })
+            let priceVal = Number(cartItem.price)
+            subT += priceVal
+            this.setState({subtotal: subT.toFixed(2)})
+            this.setState({amount: subT.toFixed(2)})
         })
-        
-''
+    })
+    }
+
+    deleteProduct(){
+axios.delete()
     }
 
     onToken = (token) => {
@@ -63,7 +64,7 @@ class Cart extends Component {
             <p>Price: ${price}</p>
             <img className="product_img" src={frontal_img} alt="product" />
             <button>Edit Quantity</button>
-            <button>Delete Item</button>
+            <button onClick={this.deleteProduct}>Delete Item</button>
             </section>
         )
     })
@@ -82,7 +83,7 @@ class Cart extends Component {
                 <h3>Order Summary</h3>
                 <h4>Subtotal:${this.state.subtotal}</h4>
                 <h4>Shipping: ${this.state.shipping}</h4>
-                <h4>Total:</h4>
+                <h4>Total:${this.state.amount}</h4>
 
 
                 <StripeCheckout
