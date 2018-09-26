@@ -4,7 +4,7 @@ const session = require('express-session');
 const massive = require('massive');
 const ctrl = require('./controller');
 const bodyParser = require('body-parser');
-const checkUserSession = require('./checkUserSession')
+// const checkUserSession = require('./checkUserSession')
 
 const app = express();
 app.use(bodyParser.json());
@@ -25,16 +25,16 @@ app.use(session({
 
 // app.use(checkUserSession)
 
-// app.use((req,res,next) => {
-//     if (ENVIRONMENT === 'dev') {
-//         req.app.get('db').set_data().then(userData => {
-//             req.session.user = userData[0]
-//             next();
-//         })
-//     } else {
-//         next();
-//     }
-// })
+app.use((req,res,next) => {
+    if (ENVIRONMENT === 'dev') {
+        req.app.get('db').set_data().then(userData => {
+            req.session.user = userData[0]
+            next();
+        })
+    } else {
+        next();
+    }
+})
 
 // *******AUTH0***************************//
 app.get(`/auth/callback/`, ctrl.login)
@@ -51,7 +51,8 @@ app.get('/api/products/bags', ctrl.getBags)
 app.get('/api/products/stickers', ctrl.getStickers)
 
 app.post('/api/cart/', ctrl.addToCart)
-app.get('/api/cart', ctrl.getCart)
+app.get('/api/cart/', ctrl.getCart)
+app.delete(`/api/cart`, ctrl.deleteProduct)
 
 
 //****************STRIPE*******************/

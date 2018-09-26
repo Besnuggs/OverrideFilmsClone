@@ -38,13 +38,17 @@ class Cart extends Component {
     })
     }
 
-    deleteProduct(){
-axios.delete()
+    deleteProduct(cart_id){
+    axios.delete(`/api/cart/${cart_id}`).then((res) => {
+        this.setState({
+            cartItems: res.data
+        })
+    })
     }
 
     onToken = (token) => {
         token.card = void 0
-        axios.post('/api/payment/', {token, amount: this.state.amount}).then(res => {
+        axios.post('/api/payment/', {token, amount: this.state.amount * 100}).then(res => {
             console.log(res)
         })
     }
@@ -57,14 +61,14 @@ axios.delete()
     console.log(this.state)
     let {cartItems} = this.state
     let cart = cartItems.map((Info, Index) => {
-        const {name, price, frontal_img} = Info
+        const {name, price, frontal_img, cart_id} = Info
         return(
             <section className="basket">
             <p>Product: {name}</p>
             <p>Price: ${price}</p>
             <img className="product_img" src={frontal_img} alt="product" />
             <button>Edit Quantity</button>
-            <button onClick={this.deleteProduct}>Delete Item</button>
+            <button onClick={() => this.deleteProduct(cart_id)}>Delete Item</button>
             </section>
         )
     })
@@ -92,7 +96,7 @@ axios.delete()
                 image={overridefilmslogo}
                 token= {this.onToken}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
-                amount={this.state.amount}
+                amount={this.state.amount * 100}
             />
                 </div>            
             </div>

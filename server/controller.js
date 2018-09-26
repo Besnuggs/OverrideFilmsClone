@@ -25,6 +25,9 @@ addToCart: (req,res,then) => {
         res.status(500).send(err)
     })
 },
+deleteProduct: (req,res,then) => {
+    
+},
 getCart: (req, res, then) => {
     let user_id = req.session.user.user_id
     const db = req.app.get('db');
