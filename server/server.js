@@ -52,7 +52,7 @@ app.get('/api/products/stickers', ctrl.getStickers)
 
 app.post('/api/cart/', ctrl.addToCart)
 app.get('/api/cart/', ctrl.getCart)
-app.delete(`/api/cart`, ctrl.deleteProduct)
+app.delete(`/api/cart/:cart_id`, ctrl.deleteProduct)
 
 
 //****************STRIPE*******************/

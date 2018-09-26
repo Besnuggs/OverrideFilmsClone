@@ -43,6 +43,7 @@ class Cart extends Component {
         this.setState({
             cartItems: res.data
         })
+        this.componentDidMount()
     })
     }
 
