@@ -14,12 +14,21 @@ getProducts: (req,res,then) => {
         })
     },
 addToCart: (req,res,then) => {
-    console.log(req.session.user.id)
-    let user_id = req.session.user.id
+    let user_id = req.session.user.user_id
     let product_id = req.body.id
     const db = req.app.get('db');
-    db.addToCart(user_id, product_id)
+    db.addToCart({user_id, product_id})
     .then(cart => {
+        res.status(200).send(cart)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send(err)
+    })
+},
+getCart: (req, res, then) => {
+    let user_id = req.session.user.user_id
+    const db = req.app.get('db');
+    db.getCart({user_id}).then( cart => {
         res.status(200).send(cart)
     }).catch(err => {
         console.log(err);

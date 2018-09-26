@@ -31,11 +31,7 @@ axios.get('/api/products/').then((res) => {
 }
 
 addToCart(id){
-axios.post(`/api/cart/`, {id}).then((res) => {
-    this.setState({
-        cart: res.data,
-    })
-})
+axios.post(`/api/cart/`, {id}).then()
 }
 
 displayAll(){

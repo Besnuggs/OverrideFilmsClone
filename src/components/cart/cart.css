@@ -1,3 +1,16 @@
 .cart{
     text-align: center;
 }
+
+.Shoppingtable{
+text-align: center;
+}
+
+.basket{
+border: solid black 1px;
+}
+
+.product_img{
+    height:200px;
+    width:200px;
+}

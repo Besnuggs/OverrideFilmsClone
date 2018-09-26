@@ -3,7 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
 const ctrl = require('./controller');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const checkUserSession = require('./checkUserSession')
 
 const app = express();
 app.use(bodyParser.json());
@@ -11,7 +12,8 @@ app.use(bodyParser.json());
 const {
 SERVER_PORT,
 SESSION_SECRET,
-DB_CONNECTION
+DB_CONNECTION,
+ENVIRONMENT
 } = process.env
 
 //*****************SESSIONS*****************//
@@ -20,8 +22,21 @@ app.use(session({
     resave: false,
     saveUninitialized:true
   }))
-  
-// *******AUTH0*******************************//
+
+// app.use(checkUserSession)
+
+// app.use((req,res,next) => {
+//     if (ENVIRONMENT === 'dev') {
+//         req.app.get('db').set_data().then(userData => {
+//             req.session.user = userData[0]
+//             next();
+//         })
+//     } else {
+//         next();
+//     }
+// })
+
+// *******AUTH0***************************//
 app.get(`/auth/callback/`, ctrl.login)
 app.get(`/api/user-data/`, ctrl.userData) 
 app.get('/logout/', ctrl.logout) 
@@ -36,6 +51,7 @@ app.get('/api/products/bags', ctrl.getBags)
 app.get('/api/products/stickers', ctrl.getStickers)
 
 app.post('/api/cart/', ctrl.addToCart)
+app.get('/api/cart', ctrl.getCart)
 
 
 //****************STRIPE*******************/
