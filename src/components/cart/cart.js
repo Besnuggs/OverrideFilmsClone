@@ -29,14 +29,16 @@ class Cart extends Component {
         })
         let {cartItems} = this.state
         let subT = 0
+        cartItems.forEach(cartItem => {
+            let costSub = Number(cartItems.price)
         
-        let costSub = Number(cartItems.price)
-        
-        console.log(subT)
-        this.setState({
-            subtotal: subT
+            
+            this.setState({
+                subtotal: subT
+            })
         })
-
+        
+''
     }
 
     onToken = (token) => {
