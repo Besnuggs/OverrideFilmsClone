@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import overridefilmslogo from "./overridefilmslogo.jpg";
 import './header.css'
+import {connect} from 'react-redux'
 
 class Header extends Component {
     render() { 
@@ -17,11 +18,18 @@ class Header extends Component {
             <Link to='/about'><p>About</p></Link>
             <Link to='/account'><p>Account</p></Link>
             <Link to='/shop'><p>Shop</p></Link>
-            <Link to='/cart'><p>Cart</p></Link>
+            <Link to='/cart'><p>Cart {this.props.itemsInCart}</p></Link>
             </div>
             </div>
           );
     }
 }
+
+function mapStateToProps(state){
+let {itemsInCart} = state
+return{
+itemsInCart
+}
+}
  
-export default Header;
+export default connect(mapStateToProps)(Header);

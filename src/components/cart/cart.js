@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios'
 import overridefilmslogo from './../../imgs/overridefilmslogo.jpg'
 import {connect} from 'react-redux'
-import removeFromShopCart from '../../ducks/reducer'
+import addToShopCart from '../../ducks/reducer'
 import './cart.css'
 
 
@@ -107,4 +107,4 @@ class Cart extends Component {
 }
 
 
-export default Cart;
+export default connect (null, {addToShopCart}) (Cart);
