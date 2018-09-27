@@ -87,7 +87,6 @@ displayStickers(){
 }
 
 render(props) {
-console.log(this.state)
 let productInfo = this.state.products.map((Info,Index) => {
 const {id, name, frontal_img, back_img, price, description, product_type, category_id} = Info
 return(

@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios'
 import overridefilmslogo from './../../imgs/overridefilmslogo.jpg'
 import {connect} from 'react-redux'
-import addToShopCart from '../../ducks/reducer'
+import {addToShopCart} from '../../ducks/reducer'
 import './cart.css'
 
 
@@ -34,15 +34,18 @@ class Cart extends Component {
             subT += priceVal
             this.setState({subtotal: subT.toFixed(2)})
             this.setState({amount: (subT + this.state.shipping).toFixed(2)})
-        })
+        }) 
     })
     }
 
     deleteProduct(cart_id){
+    let {addToShopCart} = this.props
     axios.delete(`/api/cart/${cart_id}`).then((res) => {
         this.setState({
             cartItems: res.data
         })
+        console.log(res.data.length)
+        addToShopCart(res.data.length)
         this.componentDidMount()
     })
     }
@@ -59,12 +62,11 @@ class Cart extends Component {
     }
     
     render() {
-    console.log(this.state)
     let {cartItems} = this.state
     let cart = cartItems.map((Info, Index) => {
         const {name, price, frontal_img, cart_id} = Info
         return(
-            <section className="basket">
+            <section key={Index} className="basket">
             <p>Product: {name}</p>
             <p>Price: ${price}</p>
             <p>Quantity: </p>
@@ -106,5 +108,11 @@ class Cart extends Component {
     }
 }
 
+// function mapStateToProps(state){
+// let {itemsInCart} = state
+//     return{
+//         itemsInCart
+//     }
+// }
 
 export default connect (null, {addToShopCart}) (Cart);
