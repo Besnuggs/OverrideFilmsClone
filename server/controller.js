@@ -96,9 +96,12 @@ handlePayment: (req, res) => {
         let user_id = req.session.user.user_id
         const { amount, token:{id}} = req.body
         const db = req.app.get('db');
-        db.deleteCartData({user_id}).then(cart => {
-            res.status(200).send(cart)
-        })
+        // db.deleteCartData({user_id}).then(cart => {
+        //     res.status(200).send(cart)
+        // }).catch(err => {
+        //     console.log(err);
+        //     res.status(500).send(err)
+        // })
         stripe.charges.create(
             {
                 amount: amount,
