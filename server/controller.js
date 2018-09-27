@@ -93,14 +93,20 @@ getStickers: (req, res, then) => {
     })
 },
 handlePayment: (req, res) => {
+        let user_id = req.session.user.user_id
         const { amount, token:{id}} = req.body
+        const db = req.app.get('db');
+        db.deleteCartData({user_id}).then(cart => {
+            res.status(200).send(cart)
+        })
         stripe.charges.create(
             {
                 amount: amount,
                 currency: "usd",
                 source: id,
                 description: "Test charge from Brady"
-            },
+            }
+            ,
             (err, charge) => {
                 if(err) {
                     console.log(err)

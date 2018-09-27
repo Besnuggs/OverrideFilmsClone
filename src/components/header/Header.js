@@ -3,8 +3,18 @@ import {Link} from 'react-router-dom';
 import overridefilmslogo from "./overridefilmslogo.jpg";
 import './header.css'
 import {connect} from 'react-redux'
+import axios from 'axios';
+import {addToShopCart} from '../../ducks/reducer'
 
 class Header extends Component {
+
+componentDidMount(){
+let {addToShopCart} = this.props
+axios.get('/api/cart/').then((res=>{
+addToShopCart(res.data.length)
+}))
+}
+
     render() { 
         return (
             <div>
@@ -32,4 +42,4 @@ itemsInCart
 }
 }
  
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, {addToShopCart})(Header);

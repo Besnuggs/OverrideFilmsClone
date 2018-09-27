@@ -54,6 +54,7 @@ class Cart extends Component {
         token.card = void 0
         axios.post('/api/payment/', {token, amount: this.state.amount * 100}).then(res => {
             console.log(res)
+            this.componentDidMount()
         })
     }
 
