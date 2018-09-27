@@ -17,7 +17,7 @@ class Cart extends Component {
                 amount: 1500,
                 cartItems: [],
                 subtotal: 0,
-                shipping: 5
+                shipping: 5,
             }
         this.deleteProduct = this.deleteProduct.bind(this)
     }
@@ -33,7 +33,7 @@ class Cart extends Component {
             let priceVal = Number(cartItem.price)
             subT += priceVal
             this.setState({subtotal: subT.toFixed(2)})
-            this.setState({amount: subT.toFixed(2)})
+            this.setState({amount: (subT + this.state.shipping).toFixed(2)})
         })
     })
     }
@@ -67,8 +67,9 @@ class Cart extends Component {
             <section className="basket">
             <p>Product: {name}</p>
             <p>Price: ${price}</p>
+            <p>Quantity: </p>
             <img className="product_img" src={frontal_img} alt="product" />
-            <button>Edit Quantity</button>
+            
             <button onClick={() => this.deleteProduct(cart_id)}>Delete Item</button>
             </section>
         )

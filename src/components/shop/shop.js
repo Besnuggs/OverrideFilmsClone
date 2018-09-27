@@ -5,7 +5,6 @@ import './shop.css'
 import {connect} from 'react-redux'
 import {addToShopCart} from '../../ducks/reducer'
 
-
 class Shop extends Component {
     constructor(props){
         super(props)
@@ -20,7 +19,9 @@ class Shop extends Component {
             this.displayHats = this.displayHats.bind(this)
             this.displayBags = this.displayBags.bind(this)
             this.displayStickers = this.displayStickers.bind(this)
+            this.addToCart = this.addToCart.bind(this)
     }
+    
 
 componentDidMount(){
 axios.get('/api/products/').then((res) => {
@@ -31,7 +32,10 @@ axios.get('/api/products/').then((res) => {
 }
 
 addToCart(id){
-axios.post(`/api/cart/`, {id}).then()
+let {addToShopCart} = this.props
+axios.post(`/api/cart/`, {id}).then((res) => {
+    addToShopCart(res.data.length)
+})
 }
 
 displayAll(){
@@ -115,10 +119,5 @@ return (
     }
 }
 
-function mapStateToProps(state){
-return{
-    
-}
-}
 
-export default connect (mapStateToProps, addToShopCart) (Shop);
+export default connect(null, {addToShopCart})(Shop);

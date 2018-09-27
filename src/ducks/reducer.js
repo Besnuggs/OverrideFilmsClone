@@ -1,22 +1,18 @@
 let initialState = {
-    products: [],
-    shopCart: [],
-    amount: 0,
-    productimgs: [],
     itemsInCart: 0,
-    itemsGoingToCart: []
 }
 
 // Action Types
-const ADD_TO_SHOPPING_CART = "ADD_TO_SHOPPING_CART"
+const ITEMS_IN_SHOPPING_CART = "ITEMS_IN_SHOPPING_CART"
 const REMOVE_FROM_SHOPPING_CART = "REMOVE_FROM_SHOPPING_CART"
 
 
 // Action Creators
-export function addToShopCart(product) {
+export function addToShopCart(num) {
+    console.log(num)
     return {
-        type: ADD_TO_SHOPPING_CART,
-        payload: product
+        type: ITEMS_IN_SHOPPING_CART,
+        payload: num
     }
 }
 
@@ -31,16 +27,8 @@ export function removeFromShopCart(productIndex) {
 // Reducer Function
 function reducer (state=initialState, action){
 switch(action.type){
-    case ADD_TO_SHOPPING_CART:
-    let {itemsinCart, price, product_imgs, subtotal, amount} = action.payload
-    return Object.assign({}, state, 
-        {
-        itemsinCart: itemsinCart,
-        price: price,
-        product_imgs: product_imgs,
-        subtotal: subtotal,
-        amount: amount
-        })
+    case ITEMS_IN_SHOPPING_CART:
+    return Object.assign({}, state, {itemsInCart: action.payload})
 
 
     default: return state;

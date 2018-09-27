@@ -20,6 +20,7 @@ addToCart: (req,res,then) => {
     db.addToCart({user_id, product_id})
     .then(cart => {
         res.status(200).send(cart)
+        console.log(cart)
     }).catch(err => {
         console.log(err);
         res.status(500).send(err)
