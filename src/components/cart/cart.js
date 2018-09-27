@@ -14,12 +14,13 @@ class Cart extends Component {
             this.state = {
                 price: 0,
                 productimgs: [],
-                amount: 1500,
+                amount: 0,
                 cartItems: [],
                 subtotal: 0,
                 shipping: 5,
             }
         this.deleteProduct = this.deleteProduct.bind(this)
+        this.deleteCartData = this.deleteCartData.bind(this)
     }
 
     componentDidMount(){
@@ -54,13 +55,19 @@ class Cart extends Component {
         token.card = void 0
         axios.post('/api/payment/', {token, amount: this.state.amount * 100}).then(res => {
             console.log(res)
-            this.componentDidMount()
+            this.deleteCartData()
         })
     }
 
-    updateAmount(){
-
-    }
+deleteCartData(){
+let {addToShopCart} = this.props
+axios.delete('/api/cartData/').then((res) => {
+    this.setState({subtotal: 0})
+    this.setState({amount: 0})
+    addToShopCart(0)
+    this.componentDidMount()
+})
+}
     
     render() {
     let {cartItems} = this.state
