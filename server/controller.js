@@ -2,6 +2,8 @@ require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET)
 const {REACT_APP_CLIENT_ID, CLIENT_SECRET, REACT_APP_DOMAIN} = process.env
 const axios = require('axios');
+const nodemailer = require('nodemailer')
+const smtpTransport = require('nodemailer-smtp-transport')
 
 module.exports={
 getProducts: (req,res,then) => {
@@ -14,8 +16,8 @@ getProducts: (req,res,then) => {
         })
     },
 addToCart: (req,res,then) => {
-    let user_id = req.session.user.user_id
-    let product_id = req.body.id
+    const user_id = req.session.user.user_id
+    const product_id = req.body.id
     const db = req.app.get('db');
     db.addToCart({user_id, product_id})
     .then(cart => {
@@ -26,8 +28,8 @@ addToCart: (req,res,then) => {
     })
 },
 deleteProduct: (req,res,then) => {
-   let {cart_id} = req.params
-   let user_id = req.session.user.user_id
+   const {cart_id} = req.params
+   const user_id = req.session.user.user_id
    const db = req.app.get('db');
    db.deleteProduct({cart_id, user_id}).then (cart => {
        res.status(200).send(cart)
@@ -38,7 +40,7 @@ deleteProduct: (req,res,then) => {
    })
 },
 getCart: (req, res, then) => {
-    let user_id = req.session.user.user_id
+    const user_id = req.session.user.user_id
     const db = req.app.get('db');
     db.getCart({user_id}).then( cart => {
         res.status(200).send(cart)
@@ -112,6 +114,36 @@ handlePayment: (req, res) => {
                 }
             })
         },
+sendEmailToCustomer: (req,res,then) => {
+const {USR,PASS} = process.env
+const email = req.sessions.user.email
+let transporter = nodemailer.createTransport(smtpTransport({
+    server:'gmail',
+    host:'smtp.gmail.com',
+    secure: false,
+    auth: {
+        user:USR,
+        pass:PASS
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+}))
+const mailOptions = {
+    from: 'overriddenFilms@gmail.com',
+    to: `${email}`,
+    subject: 'Order Confirmation from Overridden Films',
+    html: `<h1>Whatever I want to say</h1>`
+}
+transporter.sendMail
+(mailOptions, (error, info) => {
+    if (error) {
+        console.log(error)
+    } else {
+        console.log('email has been sent!', info)
+    }
+})
+},
 deleteCart: (req,res,then) => {
 let user_id = req.session.user.user_id
 console.log(user_id)

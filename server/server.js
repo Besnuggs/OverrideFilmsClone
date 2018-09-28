@@ -56,6 +56,10 @@ app.delete(`/api/cart/:cart_id`, ctrl.deleteProduct)
 app.delete(`/api/cartData/`, ctrl.deleteCart)
 
 
+// ****************NODEMAILER**************/
+app.post('/api/email/', ctrl.sendEmailToCustomer)
+
+
 //****************STRIPE*******************/
 app.post('/api/payment/', ctrl.handlePayment)
 
