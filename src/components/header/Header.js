@@ -18,10 +18,9 @@ addToShopCart(res.data.length)
 
     render() { 
         return (
-            <div>
             <div className="header_bar">
             <img src={overridefilmslogo} alt="Override Films logo" className="Override_logo"/>
-            </div>
+            
 
             <div className="links">
             <Link to='/'><p>Home</p></Link> 
@@ -32,6 +31,8 @@ addToShopCart(res.data.length)
             <Link to='/cart'><p>Cart {this.props.itemsInCart}</p></Link>
             </div>
             </div>
+            
+            
           );
     }
 }
