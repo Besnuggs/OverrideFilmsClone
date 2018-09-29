@@ -5,6 +5,7 @@ import './header.css'
 import {connect} from 'react-redux'
 import axios from 'axios';
 import {addToShopCart} from '../../ducks/reducer'
+import styled from 'styled-components'
 
 class Header extends Component {
 
