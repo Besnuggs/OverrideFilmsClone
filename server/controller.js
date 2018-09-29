@@ -116,7 +116,8 @@ handlePayment: (req, res) => {
         },
 sendEmailToCustomer: (req,res,then) => {
 const {USR,PASS} = process.env
-const email = req.sessions.user.email
+const email = req.session.user.email
+const name = req.session.user.user_name
 let transporter = nodemailer.createTransport(smtpTransport({
     server:'gmail',
     host:'smtp.gmail.com',
@@ -132,8 +133,8 @@ let transporter = nodemailer.createTransport(smtpTransport({
 const mailOptions = {
     from: 'overriddenFilms@gmail.com',
     to: `${email}`,
-    subject: 'Order Confirmation from Overridden Films',
-    html: `<h1>Whatever I want to say</h1>`
+    subject: 'Order Confirmation',
+    html: `<p>Thank you for your purchase, ${name}!</p>`
 }
 transporter.sendMail
 (mailOptions, (error, info) => {

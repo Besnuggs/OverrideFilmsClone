@@ -57,6 +57,9 @@ class Cart extends Component {
             console.log(res)
             this.deleteCartData()
         })
+        axios.post('/api/email/').then()
+        this.props.history.push('/home')
+        alert('Thank you for your purchase. A confirmation email has been sent!')
     }
 
 deleteCartData(){
