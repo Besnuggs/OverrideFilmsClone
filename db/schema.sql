@@ -37,7 +37,8 @@ drop table if exists cart;
 create table cart (
 cart_id SERIAL PRIMARY KEY,
 user_id INTEGER REFERENCES users(user_id),
-product_id INTEGER REFERENCES products(id)
+product_id INTEGER REFERENCES products(id),
+quantity INTEGER DEFAULT 1 NOT NULL
 );
 
 

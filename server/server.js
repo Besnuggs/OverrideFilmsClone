@@ -52,8 +52,8 @@ app.get('/api/products/stickers', ctrl.getStickers)
 
 app.post('/api/cart/', ctrl.addToCart)
 app.get('/api/cart/', ctrl.getCart)
-app.put(`/api/cart/:product_id`, ctrl.increaseProductQty)
-app.put(`/api/cart/:product_id`, ctrl.decreaseProductQty)
+app.put(`/api/cart/:cart_id`, ctrl.increaseProductQty)
+app.put(`/api/cart/:cart_id`, ctrl.decreaseProductQty)
 app.delete(`/api/cart/:cart_id`, ctrl.deleteProduct)
 app.delete(`/api/cartData/`, ctrl.deleteCart)
 

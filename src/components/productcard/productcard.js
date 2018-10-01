@@ -11,7 +11,7 @@ return(
         <img className="product_image" src={props.frontal_img} alt='products' />
         <p>{props.description}</p>
         <p>${props.price}</p>
-        <button>Add to Cart</button>
+        <button onClick={()=>{props.addToCart(props.id)}}>Add to Cart</button>
     </div>
     </div>
     )

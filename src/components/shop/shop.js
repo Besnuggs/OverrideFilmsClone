@@ -52,9 +52,10 @@ axios.get('/api/products/').then((res) => {
 axios.put(`/api/products/quantity`).then()
 }
 
-addToCart(id, quantity){
+addToCart(id){
 let {addToShopCart} = this.props
-axios.post(`/api/cart/`, {id, quantity}).then((res) => {
+console.log(id)
+axios.post(`/api/cart/`, {id}).then((res) => {
     addToShopCart(res.data.length)
 })
 }
