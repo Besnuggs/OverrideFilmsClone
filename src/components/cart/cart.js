@@ -21,7 +21,27 @@ class Cart extends Component {
             }
         this.deleteProduct = this.deleteProduct.bind(this)
         this.deleteCartData = this.deleteCartData.bind(this)
+        this.increaseQuantity = this.increaseQuantity.bind(this)
+        this.decreaseQuantity = this.decreaseQuantity.bind(this)
     }
+
+    increaseQuantity(product_id, quantity){
+        quantity++
+        console.log(quantity)
+        axios.put(`/api/cart/${product_id}`, {quantity}).then((res) => {
+            this.setState({cartItems: res.data})
+        })
+        // this.componentDidMount()
+        }
+        
+        decreaseQuantity(product_id, quantity){
+        quantity--
+        console.log(quantity)
+        axios.put(`/api/cart/${product_id}`, {quantity}).then((res)=> {
+            this.setState({cartItems:res.data})
+        })
+        // this.componentDidMount()
+        }
 
     componentDidMount(){
         axios.get(`/api/cart/`).then((res) =>{
@@ -38,6 +58,7 @@ class Cart extends Component {
         }) 
     })
     }
+
 
     deleteProduct(cart_id){
     let {addToShopCart} = this.props
@@ -73,16 +94,17 @@ axios.delete('/api/cartData/').then((res) => {
 }
     
     render() {
+    console.log(this.state)
     let {cartItems} = this.state
     let cart = cartItems.map((Info, Index) => {
-        const {name, price, frontal_img, cart_id, quantity} = Info
+        const {name, product_id, price, frontal_img, cart_id, quantity} = Info
         return(
             <section key={Index} className="basket">
             <p>Product: {name}</p>
             <p>Price: ${price}</p>
             <p>Quantity: {quantity} </p>
-            <button>+</button>
-            <button>-</button>
+            <button onClick={() => this.increaseQuantity(product_id, quantity)}>+</button>
+            <button onClick={() => this.decreaseQuantity(product_id, quantity)}>-</button>
             <img className="product_img" src={frontal_img} alt="product" />
             
             <button onClick={() => this.deleteProduct(cart_id)}>Delete Item</button>

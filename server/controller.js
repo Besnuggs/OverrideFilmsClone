@@ -16,20 +16,23 @@ getProducts: (req,res,next) => {
         })
     },
 increaseProductQty: (req,res,next) => {
-const {id, quantity} = req.body
+const {quantity} = req.body
+const {product_id} = req.params
 const db = req.app.get('db');
-db.editProductQty({quantity, id}).then(products => {
-    res.status(200).send(products)
+db.editProductQty([quantity, product_id]).then(cart => {
+    console.log(cart)
+    res.status(200).send(cart)
 }).catch(err => {
     console.log(err);
     res.status(500).send(err)
 })
 },
 decreaseProductQty: (req,res,next) => {
-    const {id, quantity} = req.body
+    const {quantity} = req.body
+    const {product_id} = req.params
     const db = req.app.get('db');
-    db.editProductQty({quantity, id}).then(products => {
-        res.status(200).send(products)
+    db.editProductQty([quantity, product_id]).then(cart => {
+        res.status(200).send(cart)
     }).catch(err => {
         console.log(err);
         res.status(500).send(err)

@@ -4,6 +4,7 @@ import ProductCard from '../productcard/productcard'
 import './shop.css'
 import {connect} from 'react-redux'
 import {addToShopCart} from '../../ducks/reducer'
+// import {updateProducts} from '../../ducks/reducer'
 
 class Shop extends Component {
     constructor(props){
@@ -26,13 +27,19 @@ class Shop extends Component {
     
 increaseQuantity(id, quantity){
 quantity++
-axios.put(`/api/products/quantity/`, {quantity, id}).then()
+console.log(quantity)
+axios.put(`/api/cart/quantity/`, {quantity, id}).then((res) => {
+    this.setState({products: res.data})
+})
 this.componentDidMount()
 }
 
 decreaseQuantity(id, quantity){
 quantity--
-axios.put(`/api/products/quantity/`, {quantity, id}).then()
+console.log(quantity)
+axios.put(`/api/cart/quantity/`, {quantity, id}).then((res)=> {
+    this.setState({products:res.data})
+})
 this.componentDidMount()
 }
 
