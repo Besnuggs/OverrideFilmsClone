@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer')
 const smtpTransport = require('nodemailer-smtp-transport')
 
 module.exports={
-getProducts: (req,res,then) => {
+getProducts: (req,res,next) => {
         const db = req.app.get('db');
         db.getProducts().then(products => {
             res.status(200).send(products)
@@ -15,11 +15,32 @@ getProducts: (req,res,then) => {
             res.status(500).send(err)
         })
     },
-addToCart: (req,res,then) => {
-    const user_id = req.session.user.user_id
-    const product_id = req.body.id
+increaseProductQty: (req,res,next) => {
+const {id, quantity} = req.body
+const db = req.app.get('db');
+db.editProductQty({quantity, id}).then(products => {
+    res.status(200).send(products)
+}).catch(err => {
+    console.log(err);
+    res.status(500).send(err)
+})
+},
+decreaseProductQty: (req,res,next) => {
+    const {id, quantity} = req.body
     const db = req.app.get('db');
-    db.addToCart({user_id, product_id})
+    db.editProductQty({quantity, id}).then(products => {
+        res.status(200).send(products)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send(err)
+    })
+},
+addToCart: (req,res,next) => {
+    const user_id = req.session.user.user_id
+    const {id, quantity} = req.body
+    const product_id = id
+    const db = req.app.get('db');
+    db.addToCart({user_id, product_id, quantity})
     .then(cart => {
         res.status(200).send(cart)
     }).catch(err => {
@@ -27,7 +48,7 @@ addToCart: (req,res,then) => {
         res.status(500).send(err)
     })
 },
-deleteProduct: (req,res,then) => {
+deleteProduct: (req,res,next) => {
    const {cart_id} = req.params
    const user_id = req.session.user.user_id
    const db = req.app.get('db');
@@ -39,7 +60,7 @@ deleteProduct: (req,res,then) => {
        res.status(500).send(err)
    })
 },
-getCart: (req, res, then) => {
+getCart: (req, res, next) => {
     const user_id = req.session.user.user_id
     const db = req.app.get('db');
     db.getCart({user_id}).then( cart => {
@@ -49,7 +70,7 @@ getCart: (req, res, then) => {
         res.status(500).send(err)
     })
 },
-getShirts: (req,res,then) => {
+getShirts: (req,res,next) => {
         const db = req.app.get('db');
         db.getShirts().then(products => {
             res.status(200).send(products)
@@ -58,7 +79,7 @@ getShirts: (req,res,then) => {
             res.status(500).send(err)
         })
 },
-getMugs: (req,res,then) => {
+getMugs: (req,res,next) => {
     const db = req.app.get('db');
     db.getMugs().then(products => {
         res.status(200).send(products)
@@ -67,7 +88,7 @@ getMugs: (req,res,then) => {
         res.status(500).send(err)
     })
 },
-getBags: (req,res,then) => {
+getBags: (req,res,next) => {
         const db = req.app.get('db');
         db.getBags().then(products => {
             res.status(200).send(products)
@@ -76,7 +97,7 @@ getBags: (req,res,then) => {
             res.status(500).send(err)
         })
 },
-getHats: (req, res, then) => {
+getHats: (req, res, next) => {
     const db = req.app.get('db');
     db.getHats().then(products => {
         res.status(200).send(products)
@@ -85,7 +106,7 @@ getHats: (req, res, then) => {
         res.status(500).send(err)
     })
 },
-getStickers: (req, res, then) => {
+getStickers: (req, res, next) => {
     const db = req.app.get('db');
     db.getStickers().then(products => {
         res.status(200).send(products)
@@ -114,7 +135,7 @@ handlePayment: (req, res) => {
                 }
             })
         },
-sendEmailToCustomer: (req,res,then) => {
+sendEmailToCustomer: (req,res,next) => {
 const {USR,PASS} = process.env
 const email = req.session.user.email
 const name = req.session.user.user_name
@@ -156,7 +177,7 @@ res.status(200).send(cart)
     res.status(500).send(err);
 })
 },
-login:  async (req,res) => {
+login:  async (req,res, next) => {
             //code ---> req.query.code
             let payload = {
                 client_id: REACT_APP_CLIENT_ID,
@@ -182,16 +203,16 @@ login:  async (req,res) => {
                // [ {name, email, picture, auth_id }]
                req.session.user = createdUser[0]
             }
-            res.redirect('/#/cart/');
+            res.redirect('/#/shop/');
         },
-userData: (req,res) => {
+userData: (req,res, next) => {
     if (req.session.user) {
         res.status(200).send(req.session.user);
     } else {
         res.status(401).send('Go log in.')
     }
 },
-logout: (req, res) => {
+logout: (req, res, next) => {
     req.session.destroy();
     res.redirect('http://localhost:3000/')
 }  

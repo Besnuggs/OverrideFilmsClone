@@ -20,8 +20,21 @@ class Shop extends Component {
             this.displayBags = this.displayBags.bind(this)
             this.displayStickers = this.displayStickers.bind(this)
             this.addToCart = this.addToCart.bind(this)
+            this.increaseQuantity = this.increaseQuantity.bind(this)
+            this.decreaseQuantity = this.decreaseQuantity.bind(this)
     }
     
+increaseQuantity(id, quantity){
+quantity++
+axios.put(`/api/products/quantity/`, {quantity, id}).then()
+this.componentDidMount()
+}
+
+decreaseQuantity(id, quantity){
+quantity--
+axios.put(`/api/products/quantity/`, {quantity, id}).then()
+this.componentDidMount()
+}
 
 componentDidMount(){
 axios.get('/api/products/').then((res) => {
@@ -29,11 +42,12 @@ axios.get('/api/products/').then((res) => {
         products: res.data
     })
 })
+axios.put(`/api/products/quantity`).then()
 }
 
-addToCart(id){
+addToCart(id, quantity){
 let {addToShopCart} = this.props
-axios.post(`/api/cart/`, {id}).then((res) => {
+axios.post(`/api/cart/`, {id, quantity}).then((res) => {
     addToShopCart(res.data.length)
 })
 }
@@ -88,13 +102,15 @@ displayStickers(){
 
 render(props) {
 let productInfo = this.state.products.map((Info,Index) => {
-const {id, name, frontal_img, back_img, price, description, product_type, category_id} = Info
+const {id, name, frontal_img, price, description, product_type, category_id, quantity} = Info
 return(
-<ProductCard
+<ProductCard 
 id={id}
+increaseQuantity={this.increaseQuantity}
+decreaseQuantity={this.decreaseQuantity}
 name={name}
 frontal_img={frontal_img}
-back_img={back_img}
+quantity={quantity}
 price={price}
 description={description}
 product_type={product_type}
@@ -112,7 +128,9 @@ return (
          <button onClick={this.displayHats}>Hats</button>
          <button value="3" onClick={this.displayBags}>Bags</button>
          <button value="6" onClick={this.displayStickers}>Stickers</button>
+         <div className="wrapper">
          {productInfo}
+         </div>
      </div>  
      );
     }

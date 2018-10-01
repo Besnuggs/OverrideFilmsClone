@@ -18,7 +18,7 @@ export default class account extends Component{
 
              <a href='http://localhost:3000/logout'>
                 <button>
-                    logout
+                    Logout
                 </button>
                 </a>
             </div>

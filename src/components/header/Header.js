@@ -16,8 +16,16 @@ addToShopCart(res.data.length)
 }))
 }
 
+login(){
+    let {REACT_APP_DOMAIN, REACT_APP_CLIENT_ID} = process.env
+    // url = 'http://localhost:3000/auth/callback'
+    let url = `${encodeURIComponent(window.location.origin)}/auth/callback`;
+    window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${url}&response_type=code`
+}
+
     render() { 
         return (
+            <div>
             <div className="header_bar">
             <img src={overridefilmslogo} alt="Override Films logo" className="Override_logo"/>
             
@@ -26,13 +34,13 @@ addToShopCart(res.data.length)
             <Link to='/'><p>Home</p></Link> 
             <Link to='/portfolio'><p>Portfolio</p></Link>
             <Link to='/about'><p>About</p></Link>
-            <Link to='/account'><p>Account</p></Link>
+            <span onClick={this.login}><p>Login</p></span>
             <Link to='/shop'><p>Shop</p></Link>
             <Link to='/cart'><p>Cart {this.props.itemsInCart}</p></Link>
             </div>
             </div>
-            
-            
+            <div className="space"></div>
+            </div>
           );
     }
 }

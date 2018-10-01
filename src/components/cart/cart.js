@@ -58,8 +58,8 @@ class Cart extends Component {
             this.deleteCartData()
         })
         axios.post('/api/email/').then()
-        this.props.history.push('/home')
         alert('Thank you for your purchase. A confirmation email has been sent!')
+        this.componentDidMount()
     }
 
 deleteCartData(){
@@ -75,12 +75,14 @@ axios.delete('/api/cartData/').then((res) => {
     render() {
     let {cartItems} = this.state
     let cart = cartItems.map((Info, Index) => {
-        const {name, price, frontal_img, cart_id} = Info
+        const {name, price, frontal_img, cart_id, quantity} = Info
         return(
             <section key={Index} className="basket">
             <p>Product: {name}</p>
             <p>Price: ${price}</p>
-            <p>Quantity: </p>
+            <p>Quantity: {quantity} </p>
+            <button>+</button>
+            <button>-</button>
             <img className="product_img" src={frontal_img} alt="product" />
             
             <button onClick={() => this.deleteProduct(cart_id)}>Delete Item</button>
@@ -93,12 +95,12 @@ axios.delete('/api/cartData/').then((res) => {
                 <h1>Shopping Cart</h1>
             <div className="Shoppingtable">
                 <h3>Items</h3>
-                <div>
+                <div className="wrapper">
                     {cart}
                 </div>
             </div>
 
-                <div className="checkOut table">
+                <div className="checkout-table">
                 <h3>Order Summary</h3>
                 <h4>Subtotal:${this.state.subtotal}</h4>
                 <h4>Shipping: ${this.state.shipping}</h4>

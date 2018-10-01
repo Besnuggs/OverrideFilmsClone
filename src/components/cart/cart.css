@@ -1,5 +1,6 @@
 .cart{
     text-align: center;
+    height: 100%;
 }
 
 .Shoppingtable{
@@ -13,4 +14,11 @@ border: solid black 1px;
 .product_img{
     height:200px;
     width:200px;
+}
+
+.checkout-table{
+    height: 200px;
+    width: 200px;
+    border: 1px solid red;
+
 }

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@vimeo/player": "^2.6.3",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
@@ -13,6 +14,7 @@
     "nodemailer-smtp-transport": "^2.7.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-player": "^1.6.6",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.5",
     "react-stripe-checkout": "^2.6.3",
