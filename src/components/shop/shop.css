@@ -2,9 +2,14 @@
     text-align: center;
 }
 
-.wrapper{
+.shop-wrapper{
     border: 1px red dotted;
     width: 300px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+
+@media(min-width: 700px){}
+
+
+@media(min-width: 1400px){}

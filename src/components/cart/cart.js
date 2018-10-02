@@ -17,7 +17,8 @@ class Cart extends Component {
                 amount: 0,
                 cartItems: [],
                 subtotal: 0,
-                shipping: 5
+                shipping: 5,
+                toggle: false
             }
         this.deleteProduct = this.deleteProduct.bind(this)
         this.deleteCartData = this.deleteCartData.bind(this)
@@ -34,11 +35,16 @@ class Cart extends Component {
         }
         
         decreaseQuantity(cart_id, quantity){
+        if(quantity === 1){
+            this.state.toggle
+        }
+        else{
         quantity--
         console.log(cart_id, quantity)
         axios.put(`/api/cart/${cart_id}`, {quantity}).then((res)=> {
             this.updateSubandAmt(res.data)
         })
+         }
         }
     
     updateSubandAmt(cart){
@@ -65,7 +71,6 @@ class Cart extends Component {
             let priceVal = Number(cartItem.price * cartItem.quantity)
             subT += priceVal
             this.setState({subtotal: subT.toFixed(2), amount: (subT + this.state.shipping).toFixed(2)})
-            // this.setState({amount: (subT + this.state.shipping).toFixed(2)})
         })
     })
     }
@@ -112,31 +117,29 @@ axios.delete('/api/cartData/').then((res) => {
         let itemTotal = price * quantity;
         itemTotal.toFixed(2);
         return(
-            <section key={Index} className="item-card">
-            <p>Product: {name}</p>
+            <section key={Index} className="item-card box">
+            <p>{name}</p>
             <p>Price: ${price}</p>
-            <p>Quantity: {quantity} </p>
             <p>Total:${itemTotal.toFixed(2)} </p>
 
-            <button disabled={this.state.toggle} onClick={() => this.increaseQuantity(cart_id, quantity)}>+</button>
-            <button onClick={() => this.decreaseQuantity(cart_id, quantity)}>-</button>
-            <img className="product_img" src={frontal_img} alt="product" />
             
+            <img className="product_img" src={frontal_img} alt="product" />
+            <p>Quantity: {quantity} </p>
+            <button onClick={() => this.increaseQuantity(cart_id, quantity)}>+</button>
+            <button disabled={this.state.toggle} onClick={() => this.decreaseQuantity(cart_id, quantity)}>-</button>
             <button onClick={() => this.deleteProduct(cart_id)}>Delete Item</button>
             </section>
         )
     })
     
         return (
-            <div className="cart">
+            <div className="cart-wrapper">
                 <div className="item-table">
-                <h1>Shopping Cart</h1>
                     {cart}
                 </div>
            
-
                 <div className="checkout-table">
-                <h3>Order Summary</h3>
+                <h3 id="summary-title">Order Summary</h3>
                 <h4>Subtotal:${this.state.subtotal}</h4>
                 <h4>Shipping: ${this.state.shipping}</h4>
                 <h4>Total:${this.state.amount}</h4>
@@ -147,8 +150,8 @@ axios.delete('/api/cartData/').then((res) => {
                 token= {this.onToken}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
                 amount={this.state.amount * 100}
-            />
-                </div>            
+                />
+                </div>
             </div>
           );
     }
