@@ -16,7 +16,7 @@ H2 {
 
 P {
   line-height: 1.4;
-  font-size: .6rem;
+  font-size: 1rem;
   font-family: "Open Sans", sans-serif; }
 
 .underline {
@@ -36,3 +36,52 @@ P {
   padding: 0 2rem;
   background: transparent;
   color: #262730; }
+
+.header_bar {
+  display: flex;
+  background-color: #353638;
+  height: 100px;
+  width: 100vw;
+  position: fixed;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 3; }
+
+.Override_logo {
+  position: absolute;
+  width: auto;
+  height: 100px; }
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: space-between;
+  width: 350px;
+  position: absolute;
+  right: 0;
+  margin-right: 100px; }
+
+.space {
+  height: 100px; }
+
+span {
+  color: grey;
+  cursor: pointer; }
+
+/* unvisited link */
+a:link {
+  color: grey;
+  text-decoration: none; }
+
+/* visited link */
+a:visited {
+  color: grey; }
+
+/* mouse over link */
+a:hover {
+  color: grey; }
+
+/* selected link */
+a:active {
+  color: grey; }

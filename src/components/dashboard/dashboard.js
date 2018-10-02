@@ -1,13 +1,8 @@
 import React, {Component} from 'react'
 import './dashboard.css'
-import styled from 'styled-components'
 import ReactPlayer from 'react-player'
 
-const AppDiv = styled.div`
-    text-align: center;
-    color:red;
-    font-size: 72px;
-    `
+
 
 class Dashboard extends Component {
 constructor(){
@@ -21,9 +16,9 @@ constructor(){
 
     render() { 
         return (
-            <AppDiv>
+            
             <div className="dashboard">
-                <h1>home</h1>
+                
 
             <div className='react-wrapper'>
             <ReactPlayer
@@ -46,7 +41,6 @@ constructor(){
 
             </div>
             </div>
-            </AppDiv>
           );
     }
 }

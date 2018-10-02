@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import overridefilmslogo from "./overridefilmslogo.jpg";
-import './header.css'
 import {connect} from 'react-redux'
 import axios from 'axios';
 import {addToShopCart} from '../../ducks/reducer'
-import styled from 'styled-components'
-import svgSource from './baseline-shopping_cart-24px.svg'
 
 class Header extends Component {
 
@@ -28,6 +25,7 @@ login(){
         return (
             <div>
             <div className="header_bar">
+            
             <img src={overridefilmslogo} alt="Override Films logo" className="Override_logo"/>
             
 
