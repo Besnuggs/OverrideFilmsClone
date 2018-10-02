@@ -35,7 +35,8 @@ login(){
             <Link to='/about'><p>About</p></Link>
             <span onClick={this.login}><p>Login</p></span>
             <Link to='/shop'><p>Shop</p></Link>
-            <Link className="cart-link" to='/cart'>{this.props.itemsInCart}</Link>
+            <Link className="cart-link" to='/cart'>
+           {this.props.itemsInCart}</Link>
             </div>
             </div>
             <div className="space"></div>
