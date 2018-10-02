@@ -134,9 +134,8 @@ axios.delete('/api/cartData/').then((res) => {
     
         return (
             <div className="cart-wrapper">
-                <div className="item-table">
                     {cart}
-                </div>
+                
            
                 <div className="checkout-table">
                 <h3 id="summary-title">Order Summary</h3>
@@ -144,6 +143,7 @@ axios.delete('/api/cartData/').then((res) => {
                 <h4>Shipping: ${this.state.shipping}</h4>
                 <h4>Total:${this.state.amount}</h4>
                 <StripeCheckout
+                className="Stripe-Button"
                 name="Override Films"
                 description="Override Films Merchandise Shop"
                 image={overridefilmslogo}
