@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .cart{
     text-align: center;
     height: 100%;
@@ -7,8 +11,9 @@
 text-align: center;
 }
 
-.basket{
+.item-card{
 border: solid black 1px;
+
 }
 
 .product_img{
@@ -20,5 +25,16 @@ border: solid black 1px;
     height: 200px;
     width: 200px;
     border: 1px solid red;
+}
 
+.item-table{
+display: flex;
+}
+
+.item-table .item-card{
+    flex:1;
+}
+
+.item-table{
+    margin: 0 0 10px 0;
 }

@@ -21,27 +21,8 @@ class Shop extends Component {
             this.displayBags = this.displayBags.bind(this)
             this.displayStickers = this.displayStickers.bind(this)
             this.addToCart = this.addToCart.bind(this)
-            this.increaseQuantity = this.increaseQuantity.bind(this)
-            this.decreaseQuantity = this.decreaseQuantity.bind(this)
     }
-    
-increaseQuantity(id, quantity){
-quantity++
-console.log(quantity)
-axios.put(`/api/cart/quantity/`, {quantity, id}).then((res) => {
-    this.setState({products: res.data})
-})
-this.componentDidMount()
-}
 
-decreaseQuantity(id, quantity){
-quantity--
-console.log(quantity)
-axios.put(`/api/cart/quantity/`, {quantity, id}).then((res)=> {
-    this.setState({products:res.data})
-})
-this.componentDidMount()
-}
 
 componentDidMount(){
 axios.get('/api/products/').then((res) => {
@@ -114,8 +95,6 @@ const {id, name, frontal_img, price, description, product_type, category_id, qua
 return(
 <ProductCard 
 id={id}
-increaseQuantity={this.increaseQuantity}
-decreaseQuantity={this.decreaseQuantity}
 name={name}
 frontal_img={frontal_img}
 quantity={quantity}

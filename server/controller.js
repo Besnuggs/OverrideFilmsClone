@@ -20,7 +20,7 @@ const {quantity} = req.body
 const {cart_id} = req.params
 const user_id = req.session.user.user_id
 const db = req.app.get('db');
-db.editProductQty([quantity, product_id, user_id]).then(cart => {
+db.editProductQty([quantity, cart_id, user_id]).then(cart => {
     console.log(cart)
     res.status(200).send(cart)
 }).catch(err => {
@@ -33,7 +33,7 @@ decreaseProductQty: (req,res,next) => {
     const {cart_id} = req.params
     const user_id = req.session.user.user_id
     const db = req.app.get('db');
-    db.editProductQty([quantity, product_id, user_id]).then(cart => {
+    db.editProductQty([quantity, cart_id, user_id]).then(cart => {
         console.log(cart)
         res.status(200).send(cart)
     }).catch(err => {

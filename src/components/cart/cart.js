@@ -17,7 +17,7 @@ class Cart extends Component {
                 amount: 0,
                 cartItems: [],
                 subtotal: 0,
-                shipping: 5,
+                shipping: 5
             }
         this.deleteProduct = this.deleteProduct.bind(this)
         this.deleteCartData = this.deleteCartData.bind(this)
@@ -29,7 +29,7 @@ class Cart extends Component {
         quantity++
         console.log(cart_id, quantity)
         axios.put(`/api/cart/${cart_id}`, {quantity}).then((res) => {
-            this.setState({cartItems: res.data})
+            this.updateSubandAmt(res.data)
         })
         }
         
@@ -37,9 +37,22 @@ class Cart extends Component {
         quantity--
         console.log(cart_id, quantity)
         axios.put(`/api/cart/${cart_id}`, {quantity}).then((res)=> {
-            this.setState({cartItems:res.data})
+            this.updateSubandAmt(res.data)
         })
         }
+    
+    updateSubandAmt(cart){
+        let subT = 0;
+        cart.forEach(cartItem => {
+            let priceVal = Number(cartItem.price * cartItem.quantity)
+            subT += priceVal
+            this.setState({
+                subtotal: subT.toFixed(2), 
+                amount: (subT + this.state.shipping).toFixed(2),
+                cartItems: cart
+            })    
+        })
+    }
 
     componentDidMount(){
         axios.get(`/api/cart/`).then((res) =>{
@@ -49,11 +62,11 @@ class Cart extends Component {
         let {cartItems} = this.state
         let subT = 0;
         cartItems.forEach(cartItem => {
-            let priceVal = Number(cartItem.price)
+            let priceVal = Number(cartItem.price * cartItem.quantity)
             subT += priceVal
-            this.setState({subtotal: subT.toFixed(2)})
-            this.setState({amount: (subT + this.state.shipping).toFixed(2)})
-        }) 
+            this.setState({subtotal: subT.toFixed(2), amount: (subT + this.state.shipping).toFixed(2)})
+            // this.setState({amount: (subT + this.state.shipping).toFixed(2)})
+        })
     })
     }
 
@@ -96,12 +109,16 @@ axios.delete('/api/cartData/').then((res) => {
     let {cartItems} = this.state
     let cart = cartItems.map((Info, Index) => {
         const {name, price, frontal_img, cart_id, quantity} = Info
+        let itemTotal = price * quantity;
+        itemTotal.toFixed(2);
         return(
-            <section key={Index} className="basket">
+            <section key={Index} className="item-card">
             <p>Product: {name}</p>
             <p>Price: ${price}</p>
             <p>Quantity: {quantity} </p>
-            <button onClick={() => this.increaseQuantity(cart_id, quantity)}>+</button>
+            <p>Total:${itemTotal.toFixed(2)} </p>
+
+            <button disabled={this.state.toggle} onClick={() => this.increaseQuantity(cart_id, quantity)}>+</button>
             <button onClick={() => this.decreaseQuantity(cart_id, quantity)}>-</button>
             <img className="product_img" src={frontal_img} alt="product" />
             
@@ -112,21 +129,17 @@ axios.delete('/api/cartData/').then((res) => {
     
         return (
             <div className="cart">
+                <div className="item-table">
                 <h1>Shopping Cart</h1>
-            <div className="Shoppingtable">
-                <h3>Items</h3>
-                <div className="wrapper">
                     {cart}
                 </div>
-            </div>
+           
 
                 <div className="checkout-table">
                 <h3>Order Summary</h3>
                 <h4>Subtotal:${this.state.subtotal}</h4>
                 <h4>Shipping: ${this.state.shipping}</h4>
                 <h4>Total:${this.state.amount}</h4>
-
-
                 <StripeCheckout
                 name="Override Films"
                 description="Override Films Merchandise Shop"
@@ -141,11 +154,11 @@ axios.delete('/api/cartData/').then((res) => {
     }
 }
 
-// function mapStateToProps(state){
-// let {itemsInCart} = state
-//     return{
-//         itemsInCart
-//     }
-// }
+function mapStateToProps(state){
+let {itemsInCart} = state
+    return{
+        itemsInCart
+    }
+}
 
-export default connect (null, {addToShopCart}) (Cart);
+export default connect (mapStateToProps, {addToShopCart}) (Cart);
