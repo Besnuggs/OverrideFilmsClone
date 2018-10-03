@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './footer.css'
-import styled from 'styled-components'
+
 
 class Footer extends Component {
     render() { 
@@ -9,13 +9,21 @@ class Footer extends Component {
               <h1>footer</h1>
 
 
-              
-              <p>social media links</p>
-             
+            <div className="social-media">
+            <p>social media links</p>
 
-              
-              <p>contact information</p>
-              
+
+            
+            </div>
+
+            <div className="contact">
+            <h1>Contact</h1> 
+            </div>
+
+            <div className="address">
+            <p>address</p>
+            </div> 
+
             </div>
         )
         };

@@ -1,9 +1,22 @@
 import React, {Component} from 'react'
+import Vimeo from '@u-wave/react-vimeo'
+import ModalVideo from 'react-modal-video'
 
 
 class Portfolio extends Component {
+constructor(){
+    super()
+        this.state={
+            isOpen: false
+        }
+    this.openModal = this.openModal.bind(this)
+}
 
-render() { 
+openModal(){
+    this.setState({isOpen: true})
+}
+
+render() {
         return (
             <div className="portfolio">
                 <h1>Portfolio</h1>
@@ -13,7 +26,6 @@ render() {
                 <button>Commercial</button>
                 <button>Tourism</button>
                 <button>Sport</button>
-
                 <div className="videoGrid">
                     <div className="videoBox" >
                     <a href="https://vimeo.com/100607532" >IRG | Rainbow Spring</a>
@@ -45,8 +57,14 @@ render() {
 {/* <a href="https://vimeo.com/122164605" >SarahTime | Revelstoke BC</a> */}
 {/* <a href="https://vimeo.com/100607532" >Snowball(Fall)</a> */}
 {/* <a href="https://vimeo.com/116730513" >Crescent Dunes Solar Farm</a> */}
-                    
-                </div>
+            <div>
+            <ModalVideo channel='vimeo' isOpen={this.state.isOpen} videoId='83740923' onClose={() => this.setState({isOpen: false})} />
+            <img src="https://img.global.news.samsung.com/global/wp-content/uploads/2016/08/Rio2016_App_Main_1.jpg" onClick={this.openModal} />
+            </div>
+               </div> 
+        
+           
+
             </div>
           );
     }

@@ -52,6 +52,11 @@ P {
   width: auto;
   height: 100px; }
 
+.cart-img {
+  z-index: -1;
+  position: fixed;
+  margin-right: 5px; }
+
 .title {
   display: flex;
   text-transformation: uppercase;
@@ -98,7 +103,6 @@ a:active {
 
 .portfolio {
   text-align: center;
-  height: 900px;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -107,3 +111,22 @@ a:active {
 .videoBox {
   display: flex;
   flex-direction: column; }
+
+body {
+  overflow-x: hidden; }
+
+.background-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden; }
+  .background-video iframe {
+    position: absolute;
+    top: -140px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }

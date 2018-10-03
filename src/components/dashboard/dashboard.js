@@ -1,45 +1,35 @@
 import React, {Component} from 'react'
-import './dashboard.css'
-import ReactPlayer from 'react-player'
-
+import './dashboard.scss'
+import Vimeo from '@u-wave/react-vimeo'
 
 
 class Dashboard extends Component {
 constructor(){
     super()
         this.state={
-            videoURL: "https://player.vimeo.com/video/129610347",
+            
         }
 }
 
-
-
     render() { 
         return (
-            
             <div className="dashboard">
-                
 
-            <div className='react-wrapper'>
-            <ReactPlayer
-            className='react-player'
-            url={this.state.videoURL} 
-            config={{
-                vimeo: {
-                    playerOptions: {autoplay: true}
-                }
-            }}
-            width='100%'
-            height='100%'
-            controls="false"
-            muted={true}
-            autoPlay={true}
+         
+
+            <Vimeo
+            className="background-video"
+            video="129610347"
+            autoplay="true"
+            muted="true"
+            background="true"
+            loop="true"
             />
+            
+            <div id="about-modal">
+            <h1>dfsdfsdfsdfs</h1>
             </div>
-
-            <div className="about-section">
-
-            </div>
+            
             </div>
           );
     }

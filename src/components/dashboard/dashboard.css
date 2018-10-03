@@ -1,19 +1,18 @@
-.dashboard{
-    text-align: center;
-}
+body {
+  overflow-x: hidden; }
 
-.react-player {
-position: absolute;
-top: 0;
-left: 0;
-}
-
-.react-wrapper{
-position: relative;
-padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */     
-}
-
-@media(min-width: 700px){}
-
-
-@media(min-width: 1400px){}
+.background-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden; }
+  .background-video iframe {
+    position: absolute;
+    top: -140px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
