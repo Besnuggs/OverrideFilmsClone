@@ -105,28 +105,24 @@ a:active {
   text-align: center;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  flex-direction: column; }
+  align-content: center; }
+
+.videoGrid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex; }
 
 .videoBox {
-  display: flex;
-  flex-direction: column; }
+  margin: 10px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0; }
 
 body {
   overflow-x: hidden; }
 
+.dashboard {
+  position: absolute; }
+
 .background-video {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 0;
-  height: 0;
-  overflow: hidden; }
-  .background-video iframe {
-    position: absolute;
-    top: -140px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; }
+  display: flex; }

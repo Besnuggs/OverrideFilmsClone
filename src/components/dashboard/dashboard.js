@@ -14,21 +14,18 @@ constructor(){
     render() { 
         return (
             <div className="dashboard">
-
-         
-
+            
+            <div className="background-video">
             <Vimeo
-            className="background-video"
             video="129610347"
             autoplay="true"
             muted="true"
             background="true"
             loop="true"
+            width="1920"
             />
-            
-            <div id="about-modal">
-            <h1>dfsdfsdfsdfs</h1>
             </div>
+           
             
             </div>
           );
