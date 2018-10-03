@@ -1,15 +1,11 @@
-.portfolio{
-    text-align: center;
-    height: 900px;
-}
+.portfolio {
+  text-align: center;
+  height: 900px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column; }
 
-.videoBox{
-    display:flex;
-    flex-direction:column;
-    flex-wrap: wrap;
-}
-
-@media(min-width: 700px){}
-
-
-@media(min-width: 1400px){}
+.videoBox {
+  display: flex;
+  flex-direction: column; }

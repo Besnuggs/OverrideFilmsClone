@@ -28,6 +28,7 @@ login(){
             
             <img src={overridefilmslogo} alt="Override Films logo" className="Override_logo"/>
             
+            <h1 className="title">Overridden Films</h1>
 
             <div className="links">
             <Link to='/'><p>Home</p></Link> 

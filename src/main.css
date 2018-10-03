@@ -52,6 +52,13 @@ P {
   width: auto;
   height: 100px; }
 
+.title {
+  display: flex;
+  text-transformation: uppercase;
+  color: #7BB9CB;
+  font-size: 36px;
+  margin-left: 70px; }
+
 .links {
   display: flex;
   justify-content: space-between;
@@ -88,3 +95,15 @@ a:hover {
 /* selected link */
 a:active {
   color: #7BB9CB; }
+
+.portfolio {
+  text-align: center;
+  height: 900px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column; }
+
+.videoBox {
+  display: flex;
+  flex-direction: column; }
