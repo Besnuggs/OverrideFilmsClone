@@ -125,4 +125,5 @@ body {
   position: absolute; }
 
 .background-video {
-  display: flex; }
+  display: flex;
+  z-index: -1; }
