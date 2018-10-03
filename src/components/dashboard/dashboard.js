@@ -22,7 +22,7 @@ constructor(){
             muted="true"
             background="true"
             loop="true"
-            width="1920"
+            width="1922"
             />
             </div>
            
