@@ -46,9 +46,9 @@ render() {
                     <div className="videoBox" >
                     <a href="https://vimeo.com/72234598" >Lexus New Dealership</a>
                     </div>
-                    </section>
+                </section>
 
-                    <section className="videoGrid">
+                <section className="videoGrid">
                     <div className="videoBox" >
                     <a href="https://vimeo.com/81212583" >Mitsubishi Outlander</a>
                     </div>
@@ -64,13 +64,13 @@ render() {
                     <div className="videoBox" >
                     <a href="https://vimeo.com/113151291" >Crewe SuperCar</a>
                     </div>
+                </section>
 
+                <section className="videoGrid">
                     <div className="videoBox" >
                     <a href="https://vimeo.com/97860446" >Aston Martin Black Tie</a>
                     </div>
-                    </section>
-
-                    <section classname="videoGrid">
+                    
                     <div className="videoBox" >
                     <a href="https://vimeo.com/124531398" >McCorvey Sheet Metal</a>
                     </div>
@@ -82,13 +82,8 @@ render() {
                     <div className="videoBox" >
                     <a href="https://vimeo.com/117356070" >Thrillseeker 5K | Obstacles</a>
                     </div>
-
-                    <div className="videoBox" >
-                    <a href="https://vimeo.com/95635641" >Wekopa Golf Club</a>
-                    </div>
                     </section>
-
-
+                    
                     <section className="videoGrid">
                     <div className="videoBox" >
                     <a href="https://vimeo.com/117553885" >Vintage on the River</a>
@@ -140,6 +135,10 @@ render() {
 
                     <div className="videoBox" >
                     <a href="https://vimeo.com/84255304" >Samsung Olympic's Aerials</a>
+                    </div>
+
+                    <div className="videoBox" >
+                    <a href="https://vimeo.com/95635641" >Wekopa Golf Club</a>
                     </div>
                     </section>
                     
