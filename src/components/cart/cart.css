@@ -22,12 +22,11 @@
         display: flex;
         max-width: 70vw;
         display: grid;
-        float:left;
 }
 
 .cart-wrapper{
     display: grid;
-    grid-template-columns: repeat(1, minmax(300px, 2fr));
+    grid-template-columns: repeat(5, minmax(300px, 2fr));
     grid-auto-rows: minmax(150px, auto);
 }
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './dashboard.scss'
+import './_dashboard.scss'
 import Vimeo from '@u-wave/react-vimeo'
 
 
