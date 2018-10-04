@@ -109,13 +109,15 @@ addToCart={this.addToCart}
 return (
      <div className="shop">
          <h1>Overridden Films Shop</h1>
-         <button onClick={this.displayAll}>All</button>
-         <button value="2" onClick={this.displayShirts}>Shirts</button>
-         <button value="5" onClick={this.displayMugs}>Mugs</button>
-         <button onClick={this.displayHats}>Hats</button>
-         <button value="3" onClick={this.displayBags}>Bags</button>
-         <button value="6" onClick={this.displayStickers}>Stickers</button>
-
+         
+         <div className="filter">
+         <span onClick={this.displayAll}>All</span>
+         <span value="2" onClick={this.displayShirts}>Shirts</span>
+         <span value="5" onClick={this.displayMugs}>Mugs</span>
+         <span onClick={this.displayHats}>Hats</span>
+         <span value="3" onClick={this.displayBags}>Bags</span>
+         <span value="6" onClick={this.displayStickers}>Stickers</span>
+         </div>
 
          <div className="shop-wrapper">
          {productInfo}

@@ -1,21 +1,26 @@
 .footer{
     display: flex;
     position: fixed;
-    justify-content: center;
+    justify-content: space-between;
     height: 100px;
     width:100vw;
     background-color: #353638; 
-    bottom:0;   
+    bottom:0;
+    align-items: space-around;
+}
+
+.title-img{
+    height: 50px;
+    width: 20%
 }
 
 .social-media{
-    justify-content: flex-start;
-    
+    justify-content: center;
+    left: 0
 }
 
 .contact{
     justify-content: center;
-
 }
 
 .address{

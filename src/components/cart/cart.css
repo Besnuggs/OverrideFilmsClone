@@ -6,6 +6,10 @@
 
 .cart-body{
     position:absolute;
+    display:flex;
+    justify-content: space-evenly;
+    align-content: space-between;
+    align-items: center
 }
 
 #summary-title{
@@ -23,8 +27,8 @@
 
 .cart-wrapper{
     display: grid;
-    /* grid-template-columns: repeat(1, minmax(300px, 2fr)); */
-    /* grid-auto-rows: minmax(150px, auto); */
+    grid-template-columns: repeat(1, minmax(300px, 2fr));
+    grid-auto-rows: minmax(150px, auto);
 }
 
 .cart-wrapper > * {
@@ -55,9 +59,9 @@ width:200px;
     flex-direction: column;
     border: black 1px solid;
     width: 400px;
-    height:240px;
+    height:340px;
     font-size: 20px;
-    justify-content: flex-end;
+    justify-content: center;
     align-content: flex-end;
     align-items: center;
     margin: 0 auto;

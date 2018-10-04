@@ -1,14 +1,11 @@
 import React, {Component} from 'react'
 import './footer.css'
-
+import titleImg from './overridetitle.png'
 
 class Footer extends Component {
     render() { 
         return (
             <div className="footer">
-            <h1>footer</h1>
-
-
             <div className="social-media">
             <p>social media links</p>
             <p>facebook</p>
@@ -20,11 +17,11 @@ class Footer extends Component {
 
             <div className="contact">
             <h1>Contact</h1>
-            
             </div>
 
             <div className="address">
-            <p>address</p>
+            <p>In a room named after a mountain @</p> 
+            <p>560 S 100 W St, Provo, UT 84601</p>
             </div> 
 
             </div>

@@ -1,0 +1,20 @@
+.shop{
+    display:flex;
+    justify-content: center;
+}
+
+.filter{
+    flex-direction: column;
+}
+
+.filter span{
+    width:50px;
+    border: solid black 1px
+}
+
+.shop-wrapper{
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap:wrap;
+
+}
