@@ -7,7 +7,6 @@ import {addToShopCart} from '../../ducks/reducer'
 import './cart.css'
 
 
-
 class Cart extends Component {
     constructor(props){
         super(props)
@@ -118,12 +117,13 @@ axios.delete('/api/cartData/').then((res) => {
         itemTotal.toFixed(2);
         return(
             <section key={Index} className="item-card box">
+            <img className="product_img" src={frontal_img} alt="product" />
             <p>{name}</p>
             <p>Price: ${price}</p>
             <p>Total:${itemTotal.toFixed(2)} </p>
 
             
-            <img className="product_img" src={frontal_img} alt="product" />
+            
             <p>Quantity: {quantity} </p>
             <button onClick={() => this.increaseQuantity(cart_id, quantity)}>+</button>
             <button disabled={this.state.toggle} onClick={() => this.decreaseQuantity(cart_id, quantity)}>-</button>
@@ -133,11 +133,8 @@ axios.delete('/api/cartData/').then((res) => {
     })
     
         return (
-            <div className="cart-wrapper">
-                    {cart}
-                
-           
-                <div className="checkout-table">
+            <div className="cart-body">
+            <div className="checkout-table">
                 <h3 id="summary-title">Order Summary</h3>
                 <h4>Subtotal:${this.state.subtotal}</h4>
                 <h4>Shipping: ${this.state.shipping}</h4>
@@ -152,6 +149,14 @@ axios.delete('/api/cartData/').then((res) => {
                 amount={this.state.amount * 100}
                 />
                 </div>
+
+            <div className="cart-wrapper">
+                    {cart}
+            </div>
+                
+           
+                
+                
             </div>
           );
     }

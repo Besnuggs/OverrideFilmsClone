@@ -115,9 +115,13 @@ return (
          <button onClick={this.displayHats}>Hats</button>
          <button value="3" onClick={this.displayBags}>Bags</button>
          <button value="6" onClick={this.displayStickers}>Stickers</button>
-         <div className="wrapper">
+
+
+         <div className="shop-wrapper">
          {productInfo}
          </div>
+
+
      </div>  
      );
     }

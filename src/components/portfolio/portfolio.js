@@ -147,7 +147,8 @@ render() {
 {/* <a href="https://vimeo.com/116730513" >Crescent Dunes Solar Farm</a> */}
             <div>
             <ModalVideo channel='vimeo' isOpen={this.state.isOpen} videoId='83740923' onClose={() => this.setState({isOpen: false})} />
-            <img src="https://img.global.news.samsung.com/global/wp-content/uploads/2016/08/Rio2016_App_Main_1.jpg" onClick={this.openModal} />
+            
+            <img src="https://scontent-lax3-1.cdninstagram.com/vp/a595d8254749761804cf3ff41b6e9134/5BCAEC69/t51.2885-15/e35/c0.135.1080.1080/s480x480/32006588_215993399179957_78361910243753984_n.jpg" onClick={this.openModal} />
             </div>
                
         

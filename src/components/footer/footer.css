@@ -7,3 +7,18 @@
     background-color: #353638; 
     bottom:0;   
 }
+
+.social-media{
+    justify-content: flex-start;
+    
+}
+
+.contact{
+    justify-content: center;
+
+}
+
+.address{
+    justify-content: flex-end;
+
+}
