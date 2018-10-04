@@ -4,6 +4,8 @@ const session = require('express-session');
 const massive = require('massive');
 const ctrl = require('./controller');
 const bodyParser = require('body-parser');
+
+app.use( express.static( `${__dirname}/../build` ) );
 // const checkUserSession = require('./checkUserSession')
 
 const app = express();

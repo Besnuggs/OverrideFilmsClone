@@ -11,8 +11,6 @@ class Cart extends Component {
     constructor(props){
         super(props)
             this.state = {
-                price: 0,
-                productimgs: [],
                 amount: 0,
                 cartItems: [],
                 subtotal: 0,
@@ -27,7 +25,6 @@ class Cart extends Component {
 
     increaseQuantity(cart_id, quantity){
         quantity++
-        console.log(cart_id, quantity)
         axios.put(`/api/cart/${cart_id}`, {quantity}).then((res) => {
             this.updateSubandAmt(res.data)
         })
@@ -39,7 +36,6 @@ class Cart extends Component {
         }
         else{
         quantity--
-        console.log(cart_id, quantity)
         axios.put(`/api/cart/${cart_id}`, {quantity}).then((res)=> {
             this.updateSubandAmt(res.data)
         })
@@ -81,9 +77,14 @@ class Cart extends Component {
         this.setState({
             cartItems: res.data
         })
-        console.log(res.data.length)
+        let {cartItems} = this.state
+        let subT = 0;
+        cartItems.forEach(cartItem => {
+            let priceVal = Number(cartItem.price * cartItem.quantity)
+            subT += priceVal
+            this.setState({subtotal: subT.toFixed(2), amount: (subT + this.state.shipping).toFixed(2)})
+        })
         addToShopCart(res.data.length)
-        this.componentDidMount()
     })
     }
 
@@ -125,8 +126,8 @@ axios.delete('/api/cartData/').then((res) => {
             
             
             <p>Quantity: {quantity} </p>
-            <button onClick={() => this.increaseQuantity(cart_id, quantity)}>+</button>
-            <button disabled={this.state.toggle} onClick={() => this.decreaseQuantity(cart_id, quantity)}>-</button>
+            <span className="quantity-button" onClick={() => this.increaseQuantity(cart_id, quantity)}>+</span>
+            <span className="quantity-button"  disabled={this.state.toggle} onClick={() => this.decreaseQuantity(cart_id, quantity)}>-</span>
             <button onClick={() => this.deleteProduct(cart_id)}>Delete Item</button>
             </section>
         )

@@ -16,7 +16,7 @@ export default class account extends Component{
             <div className="account">
             <button onClick={this.login}>Login</button>
 
-             <a href='http://localhost:3000/logout'>
+             <a href={process.env.REACT_APP_LOGIN}>
                 <button>
                     Logout
                 </button>

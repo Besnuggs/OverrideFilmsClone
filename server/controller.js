@@ -1,6 +1,6 @@
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET)
-const {REACT_APP_CLIENT_ID, CLIENT_SECRET, REACT_APP_DOMAIN} = process.env
+const {REACT_APP_CLIENT_ID, CLIENT_SECRET, REACT_APP_DOMAIN, REACT_APP_LOGIN} = process.env
 const axios = require('axios');
 const nodemailer = require('nodemailer')
 const smtpTransport = require('nodemailer-smtp-transport')
@@ -42,11 +42,15 @@ decreaseProductQty: (req,res,next) => {
     })
 },
 addToCart: (req,res,next) => {
+    console.log(req.session)
     const user_id = req.session.user.user_id
     const {id} = req.body
     const product_id = id
     const quantity = 1
     const db = req.app.get('db');
+    // db.checkCart({user_id, product_id}).then(cart => {
+    //     if (cart)
+    // })
     db.addToCart({user_id, product_id, quantity})
     .then(cart => {
         res.status(200).send(cart)
@@ -221,6 +225,6 @@ userData: (req,res, next) => {
 },
 logout: (req, res, next) => {
     req.session.destroy();
-    res.redirect('http://localhost:3000/')
+    res.redirect(`${REACT_APP_LOGIN}`)
 }  
 }

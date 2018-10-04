@@ -18,7 +18,6 @@ drop table if exists imgs;
 create table imgs (
 id SERIAL PRIMARY KEY,
 frontal_img TEXT,
-back_img TEXT,
 main boolean,
 product_id integer REFERENCES products(id)
 );
@@ -31,7 +30,7 @@ user_name varchar(180),
 email varchar(180),
 picture text,
 auth_id text
-)
+);
 
 drop table if exists cart;
 create table cart (
