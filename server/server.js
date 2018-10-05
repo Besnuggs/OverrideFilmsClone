@@ -5,11 +5,12 @@ const massive = require('massive');
 const ctrl = require('./controller');
 const bodyParser = require('body-parser');
 
-app.use( express.static( `${__dirname}/../build` ) );
-// const checkUserSession = require('./checkUserSession')
+
 
 const app = express();
 app.use(bodyParser.json());
+app.use( express.static( `${__dirname}/../build` ) );
+// const checkUserSession = require('./checkUserSession')
 
 const {
 SERVER_PORT,
