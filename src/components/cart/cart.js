@@ -96,6 +96,7 @@ class Cart extends Component {
         })
         axios.post('/api/email/').then()
         alert('Thank you for your purchase. A confirmation email has been sent!')
+        this.props.history.push('/#/')
         this.componentDidMount()
     }
 
@@ -119,6 +120,7 @@ axios.delete('/api/cartData/').then((res) => {
         return(
             <section key={Index} className="item-card box">
             <img className="product_img" src={frontal_img} alt="product" />
+            <div className="product-details">
             <p>{name}</p>
             <p>Price: ${price}</p>
             <p>Total:${itemTotal.toFixed(2)} </p>
@@ -128,7 +130,8 @@ axios.delete('/api/cartData/').then((res) => {
             <p>Quantity: {quantity} </p>
             <span className="quantity-button" onClick={() => this.increaseQuantity(cart_id, quantity)}>+</span>
             <span className="quantity-button"  disabled={this.state.toggle} onClick={() => this.decreaseQuantity(cart_id, quantity)}>-</span>
-            <button onClick={() => this.deleteProduct(cart_id)}>Delete Item</button>
+            <span className="delete-button" onClick={() => this.deleteProduct(cart_id)}>Delete Item</span>
+            </div>
             </section>
         )
     })
@@ -156,7 +159,6 @@ axios.delete('/api/cartData/').then((res) => {
             </div>
                 
            
-                
                 
             </div>
           );

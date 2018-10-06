@@ -32,51 +32,79 @@ render() {
 
                 <section className="videoGrid">
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/100607532" >IRG | Rainbow Spring</a>
+                    <a href="https://vimeo.com/100607532" >
+                    <img className="img-display" src="https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F482145383_1280x720.jpg&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png"
+                    />
+                    IRG | Rainbow Spring</a>
                     </div>
 
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/118293267" >The Cabin @ Oakley</a>
+                    <a href="https://vimeo.com/118293267" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/505297831_1280x720.jpg"
+                    />
+                    The Cabin @ Oakley</a>
                     </div>
 
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/83739112" >Red Ledges | Real Estate</a>
+                    <a href="https://vimeo.com/83739112" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/505297831_1280x720.jpg"
+                    />
+                    Red Ledges | Real Estate</a>
                     </div>
 
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/72234598" >Lexus New Dealership</a>
-                    </div>
-                </section>
-
-                <section className="videoGrid">
-                    <div className="videoBox" >
-                    <a href="https://vimeo.com/81212583" >Mitsubishi Outlander</a>
-                    </div>
-
-                    <div className="videoBox" >
-                    <a href="https://vimeo.com/113410786" >Lexus December to Remember</a>
-                    </div>
-
-                    <div className="videoBox" >
-                    <a href="https://vimeo.com/114349608" >SuperSonic</a>
-                    </div>
-
-                    <div className="videoBox" >
-                    <a href="https://vimeo.com/113151291" >Crewe SuperCar</a>
+                    <a href="https://vimeo.com/72234598" >
+                    <img className="img-display" src="https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F482145383_1280x720.jpg&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png"
+                    />Lexus New Dealership</a>
                     </div>
                 </section>
 
                 <section className="videoGrid">
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/97860446" >Aston Martin Black Tie</a>
+                    <a href="https://vimeo.com/81212583" >
+                    <img className="img-display" src="https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F482145383_1280x720.jpg&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png"
+                    />Mitsubishi Outlander</a>
+                    </div>
+
+                    <div className="videoBox" >
+                    <a href="https://vimeo.com/113410786" >
+                    <img className="img-display" src="https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F482145383_1280x720.jpg&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png"
+                    />Lexus December to Remember</a>
+                    </div>
+
+                    <div className="videoBox" >
+                    <a href="https://vimeo.com/114349608" >
+                    <img className="img-display" src="https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F482145383_1280x720.jpg&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png"
+                    />SuperSonic</a>
+                    </div>
+
+                    <div className="videoBox" >
+                    <a href="https://vimeo.com/113151291" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/508486788_1280x720.jpg"
+                    />
+                    Crewe SuperCar</a>
+                    </div>
+                </section>
+
+                <section className="videoGrid">
+                    <div className="videoBox" >
+                    <a href="https://vimeo.com/97860446" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/478418293_1280x720.jpg"
+                    />
+                    Aston Martin Black Tie</a>
                     </div>
                     
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/124531398" >McCorvey Sheet Metal</a>
+                    <a href="https://vimeo.com/124531398" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/514565137_1280x720.jpg"
+                    />
+                    McCorvey Sheet Metal</a>
                     </div>
 
                     <div className="videoBox" >
-                    <a href="https://www.youtube.com/watch?v=iUo6GwEw_Bw" >The North Face</a>
+                    <a href="https://www.youtube.com/watch?v=iUo6GwEw_Bw" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/514565137_1280x720.jpg"
+                    />The North Face</a>
                     </div>
 
                     <div className="videoBox" >
@@ -86,7 +114,9 @@ render() {
                     
                     <section className="videoGrid">
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/117553885" >Vintage on the River</a>
+                    <a href="https://vimeo.com/117553885" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/514565137_1280x720.jpg"
+                    />Vintage on the River</a>
                     </div>
 
                     <div className="videoBox" >
@@ -98,17 +128,23 @@ render() {
                     </div>
 
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/97046377" >Mesquite Paralong Drive Nationals Trailer</a>
+                    <a href="https://vimeo.com/97046377" >
+                    <img className="img-display" src="https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F477281801_1280x720.jpg&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png"
+                    />
+                    Mesquite Paralong Drive Nationals Trailer</a>
                     </div>
                     </section>
 
                     <section className="videoGrid">
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/129610347" >Uplift | Aerial Reel</a>
+                    <a href="https://vimeo.com/129610347"><img className="img-display" src="http://i.vimeocdn.com/video/521183979_1280x720.jpg"
+                    />Uplift | Aerial Reel</a>
                     </div>
 
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/86747776" >Influence | Walker Estate Utah</a>
+                    <a href="https://vimeo.com/86747776" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/462708881_1280x720.jpg"
+                    />Influence | Walker Estate Utah</a>
                     </div>
 
                     <div className="videoBox" >
@@ -122,7 +158,9 @@ render() {
 
                     <section className="videoGrid">
                     <div className="videoBox" >
-                    <a href="https://vimeo.com/126025578" >Way Engineering</a>
+                    <a href="https://vimeo.com/126025578" >
+                    <img className="img-display" src="https://i.vimeocdn.com/video/462708881_1280x720.jpg"
+                    />Way Engineering</a>
                     </div>
 
                     <div className="videoBox" >
@@ -147,8 +185,6 @@ render() {
 {/* <a href="https://vimeo.com/116730513" >Crescent Dunes Solar Farm</a> */}
             <div>
             <ModalVideo channel='vimeo' isOpen={this.state.isOpen} videoId='83740923' onClose={() => this.setState({isOpen: false})} />
-            
-            <img src="https://scontent-lax3-1.cdninstagram.com/vp/a595d8254749761804cf3ff41b6e9134/5BCAEC69/t51.2885-15/e35/c0.135.1080.1080/s480x480/32006588_215993399179957_78361910243753984_n.jpg" onClick={this.openModal} />
             </div>
                
         

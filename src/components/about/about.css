@@ -1,7 +1,12 @@
 .about{
     text-align:center;
-    height:900px;
 }
+
+.video-container{
+    position: relative;
+    box-sizing: border-box;
+}
+
 
 @media(min-width: 700px){}
 
