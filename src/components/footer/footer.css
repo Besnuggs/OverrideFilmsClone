@@ -18,29 +18,60 @@
 }
 
 .facebook{
+    filter: grayscale(100%);
     width: 50px;
     height: 50px;
+}
+
+.facebook:hover{
+    transition-duration: 1s;
+    filter:grayscale(0%)
 }
 
 .instagram{
+    filter: grayscale(100%);
     width: 50px;
     height: 50px;
+}
+
+.instagram:hover{
+    transition-duration: 1s;
+    filter:grayscale(0%)
 }
 
 .twitter{
+    filter: grayscale(100%);
     width: 50px;
     height: 50px;
+}
+
+.twitter:hover{
+    transition-duration: 1s;
+    filter:grayscale(0%)
 }
 
 .youtube{
+    filter: grayscale(100%);
     width: 50px;
     height: 50px;
 }
 
+.youtube:hover{
+    transition-duration: 1s;
+    filter:grayscale(0%)
+}
+
 .vimeo{
+    filter: grayscale(100%);
     width: 50px;
     height: 50px;
 }
+
+.vimeo:hover{
+    transition-duration: 1s;
+    filter: grayscale(0%)
+}
+
 
 .title-img{
     height: 50px;
@@ -49,8 +80,7 @@
 
 
 /* Contact */
-
-.contact{
+.OG-website{
     color:white;
     justify-content: center;
     height:100px;
@@ -59,6 +89,7 @@
 .OverrideLogo{
     height:100%;
 }
+
 /* Address */
 .address{
     justify-content: flex-end;

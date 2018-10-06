@@ -1,3 +1,7 @@
+body, html{
+    height:100%;
+}
+
 .about{
     text-align:center;
 }
@@ -7,6 +11,95 @@
     box-sizing: border-box;
 }
 
+.about-wrapper{
+    height:100%;
+    margin: 0;
+    margin-bottom: 100px;
+    line-height: 1.8em;
+}
+
+.pimg1, .pimg2, .pimg3{
+position: relative;
+opacity: 0.87;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+/* 
+fixed = illusion of parallax
+scrolled = normal
+*/
+background-attachment: fixed;
+
+}
+
+.pimg1{
+    background-image:url("https://scontent-lht6-1.cdninstagram.com/vp/804ca50a0e33bfdf3bfcdcf2ca183f00/5C20CD3D/t51.2885-15/e35/32006588_215993399179957_78361910243753984_n.jpg?se=7&ig_cache_key=MTc4NDI1NzMyMzE2NDY0MjU4MQ%3D%3D.2");
+    min-height: 100%;
+    height:600px;
+}
+
+.pimg2{
+    background-image:url("https://scontent-lht6-1.cdninstagram.com/vp/6a1804fb7bccee5d0e6d1bfcaa4a8ef8/5C2625F7/t51.2885-15/e35/38721610_784900085234656_2049843759868280832_n.jpg?se=7&ig_cache_key=MTg0ODc3MDQ1NDA1Mzg0NTQ2NQ%3D%3D.2");
+    min-height: 100%;
+    height: 400px;
+}
+
+.pimg3{
+    background-image:url("https://scontent-lht6-1.cdninstagram.com/vp/c8537e88e2efd370ef7d669781e085f2/5C32C98B/t51.2885-15/e35/38154084_656624068035280_1682505184250429440_n.jpg?se=7&ig_cache_key=MTg0MzM1NDkwMDc1NzI0MzQyNg%3D%3D.2");
+    min-height: 100%;
+    height:400px;
+}
+
+.section{
+    text-align:center;
+    padding: 50px 80px;
+}
+
+.section-one{
+    background-color: #F5EFE3;
+}
+
+.section-two{
+    background-color:#7BB9CB;
+}
+
+.ptext span{
+    position: absolute;
+    top:50%;
+    width:100%;
+    text-align: center;
+    color:#000;
+    font-size:27px;
+    letter-spacing: 8px;
+}
+
+.OverrideFilms{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Production{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.OverrideFilmsTeam{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Clone{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
 @media(min-width: 700px){}
 

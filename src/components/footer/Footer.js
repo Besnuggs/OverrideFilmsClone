@@ -20,9 +20,7 @@ class Footer extends Component {
             <a href="https://vimeo.com/overridefilms" className="${pulse}"><img src={vimeo} alt="vimeo" className="vimeo" /></a>
             </div>
 
-            <div className="contact">
-            <h1 className="animate pulse">     
-            </h1>
+            <div className="OG-website">
             <a href="http://overridefilms.com/"><img className="OverrideLogo" src={overrideOGLogo} alt="original-site"></img></a>
             </div>
 

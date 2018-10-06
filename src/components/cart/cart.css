@@ -47,11 +47,12 @@
         max-width: 70vw;
         display: grid;
         margin-bottom: 100px;
+        justify-content: space-between;
 }
 
 .cart-wrapper{
     display: grid;
-    grid-template-columns: repeat(5, minmax(300px, 2fr));
+    grid-template-columns: repeat(4, minmax(300px, 2fr));
     grid-auto-rows: minmax(150px, auto);
 }
 
@@ -79,11 +80,12 @@ width:200px;
 
 .checkout-table{
     display: flex;
+    background: white;
     position: relative;
     flex-direction: column;
     border: black 1px solid;
-    width: 400px;
-    height:340px;
+    width: 300px;
+    height:240px;
     font-size: 20px;
     justify-content: center;
     align-content: flex-end;
