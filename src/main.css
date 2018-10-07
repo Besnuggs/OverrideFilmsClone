@@ -134,7 +134,8 @@ body {
   overflow-x: hidden; }
 
 .dashboard {
-  position: absolute; }
+  position: absolute;
+  overflow-y: hidden; }
 
 .background-video {
   display: flex;
