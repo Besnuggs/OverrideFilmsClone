@@ -40,9 +40,9 @@ login(){
             <h1 className="title">Overridden Films</h1>
 
             <div className="links">
-            <Link to='/'><p>Home</p></Link> 
-            <Link to='/portfolio'><p>Portfolio</p></Link>
+            <Link to='/'><p>Home</p></Link>
             <Link to='/about'><p>About</p></Link>
+            {/* <Link to='/portfolio'><p>Portfolio</p></Link> */}
             <span onClick={this.login}><p>Login</p></span>
             <Link to='/shop'><p>Shop</p></Link>
             <Link className="cart-link" to='/cart'>

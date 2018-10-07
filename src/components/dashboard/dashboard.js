@@ -4,13 +4,6 @@ import Vimeo from '@u-wave/react-vimeo'
 
 
 class Dashboard extends Component {
-constructor(){
-    super()
-        this.state={
-            
-        }
-}
-
     render() { 
         return (
             <div className="dashboard">

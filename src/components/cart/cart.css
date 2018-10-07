@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+.delete-cart{
+    padding:5px;
+    color: #7BB9CB;
+    border: solid 1px black;
+    margin-top:5px; 
+}
+
+.delete-cart:hover {
+    transition-duration: 1s;
+    background:red;
+}
+
+
 .product-details{
     display:flex;
     flex-direction: column;
