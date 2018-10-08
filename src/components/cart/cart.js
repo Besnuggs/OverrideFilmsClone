@@ -15,7 +15,8 @@ class Cart extends Component {
                 cartItems: [],
                 subtotal: 0,
                 shipping: 5,
-                toggle: false
+                toggle: false,
+                redirect: false
             }
         this.deleteProduct = this.deleteProduct.bind(this)
         this.deleteCartData = this.deleteCartData.bind(this)
@@ -92,24 +93,19 @@ class Cart extends Component {
 
     onToken = (token) => {
         token.card = void 0
-        axios.post('/api/payment/', {token, amount: this.state.amount * 100}).then(res => {
-            console.log(res)
-            this.deleteCartData()
-        })
-        axios.post('/api/email/').then()
-        alert('Thank you for your purchase. A confirmation email has been sent!')
-        this.props.history.push('/#/')
-        this.componentDidMount()
+        axios.post('/api/payment/', {token, amount: this.state.amount * 100}).then()
+        this.deleteCartData()
     }
 
 deleteCartData(){
 let {addToShopCart} = this.props
 axios.delete('/api/cartData/').then((res) => {
-    this.setState({subtotal: 0})
-    this.setState({amount: 0})
+    this.setState({subtotal: 0, amount: 0})
     addToShopCart(0)
-    this.componentDidMount()
 })
+axios.post('/api/email/').then()
+        alert('Thank you for your purchase. A confirmation email has been sent!')
+        this.props.history.push('/#/')
 }
     
     render() {

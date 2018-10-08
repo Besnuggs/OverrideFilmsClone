@@ -151,9 +151,17 @@ background-attachment: fixed;
 	transform: rotateY(180deg);
 }
 
+/* Displaying contents on the front and back side */
 .fa-envelope{
     font-size: 50px;
 }
+
+.front, .back{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
 .section{
     text-align:center;
