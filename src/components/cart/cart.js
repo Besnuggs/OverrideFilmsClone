@@ -21,7 +21,7 @@ class Cart extends Component {
         this.deleteCartData = this.deleteCartData.bind(this)
         this.increaseQuantity = this.increaseQuantity.bind(this)
         this.decreaseQuantity = this.decreaseQuantity.bind(this)
-        this.deleteCart = this.deleteCart.bind(this)
+        this.deleteCartData = this.deleteCartData.bind(this)
     }
 
     increaseQuantity(cart_id, quantity){
@@ -43,10 +43,6 @@ class Cart extends Component {
          }
         }
 
-    deleteCart(){
-
-
-    }
     
     updateSubandAmt(cart){
         let subT = 0;
@@ -158,7 +154,7 @@ axios.delete('/api/cartData/').then((res) => {
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
                 amount={this.state.amount * 100}
                 />
-                 <span className="delete-cart" onClick={() => {this.deleteCart}}>Delete Cart</span>
+                 <span className="delete-cart" onClick={() => this.deleteCartData}>Delete Cart</span>
                 </div>
                
 

@@ -53,6 +53,7 @@ background-attachment: fixed;
 
 .section-titles{
     font-size: 24px;
+    text-transform: uppercase;
 }
 
 .pimg1{
@@ -140,6 +141,11 @@ background-attachment: fixed;
     border: solid 1px
 }
 
+.back p{
+    background:white;
+    border: black solid
+}
+
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
@@ -169,6 +175,7 @@ background-attachment: fixed;
 }
 
 .team{
+    margin-top:50px;
     text-align: center;
 }
 
@@ -203,11 +210,14 @@ background-attachment: fixed;
     align-items: center;
 }
 
-.Clone{
+
+.clone{
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 @media(min-width: 700px){}

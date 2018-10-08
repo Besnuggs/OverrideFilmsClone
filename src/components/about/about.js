@@ -50,7 +50,7 @@ class About extends Component {
                 </div>
 
                 <section className="section">
-                    <h1 className="section-titles">About</h1>
+                    <h1 className="section-titles">Films You Feel. Films That Fascinate.</h1>
                          <p>
                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
                         </p>
@@ -81,7 +81,6 @@ SO MUCH MORE.</h1>
                     </div>
                 </div>
 
-                <div className="team">
                 <div id="counter">
                          <h1 className="counter-text">Combined years in production:</h1>
                         <div className="counter-value" data-count="22">0</div>
@@ -94,9 +93,9 @@ SO MUCH MORE.</h1>
                         </div>
 
 {/* Team Section - Many Flip cards ahead.  "ontouchstart" allows mobile flipping */}
-                    <h2 className="section-titles">Team</h2>
+            <div className="team">
+        <h2 className="section-titles">Team</h2>
 <div className="The-Team-Cards">
-
 {/* Card 1 */}
 <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div className="flipper">
@@ -107,7 +106,7 @@ SO MUCH MORE.</h1>
 		</div>
 		<div className="back">
 			<h1>Jon Snow</h1>
-            <h2>Defender of The North</h2>
+            <h2>"Defender of The North"</h2>
             <p>
             Jon Snow, born Aegon Targaryen, is the son of Lyanna Stark and Rhaegar Targaryen, the late Prince of Dragonstone. From infancy, Jon is presented as the bastard son of Lord Eddard Stark, Lyanna's brother, and raised by Eddard alongside his lawful children at Winterfell but his true parentage is kept secret from everyone, including Jon himself. In order to escape his bastard status, Jon joins the Night's Watch and is eventually chosen as Lord Commander.
             </p>
@@ -126,7 +125,7 @@ SO MUCH MORE.</h1>
 		</div>
 		<div className="back">
 			<h1>Daenerys Targaryen</h1>
-            <h2>Protector of the Seven Kingdoms</h2>
+            <h2>"Protector of the Seven Kingdoms"</h2>
             <p>Queen Daenerys Targaryen, also known as Dany and Daenerys Stormborn, is the younger sister of Rhaegar Targaryen and Viserys Targaryen and only daughter of King Aerys II Targaryen and Queen Rhaella Targaryen, who were both ousted from the Iron Throne during Robert Baratheon's rebellion.</p>
             <a href="mailto:DaenerysTargaryen@hotmail.com?Subject=Everyone's%20cheering%20for%20your%20return%20to%20the%20Iron%20Throne."><i className="fas fa-envelope"></i></a>
 		</div>
@@ -143,7 +142,7 @@ SO MUCH MORE.</h1>
 		</div>
 		<div className="back">
 			<h1>Tyrion Lannister</h1>
-            <h2>Lord of Casterly Rock</h2>
+            <h2>"Lord of Casterly Rock"</h2>
             <p>Lord Tyrion Lannister is the youngest child of Lord Tywin Lannister and younger brother of Cersei and Jaime Lannister. A dwarf, he uses his wit and intellect to overcome the prejudice he faces.</p>
             <a href="mailto:tyrionlannister@hotmail.com?Subject=You're%20my%20favorite%20character."><i className="fas fa-envelope"></i></a>
 		</div>
@@ -160,7 +159,7 @@ SO MUCH MORE.</h1>
 		</div>
 		<div className="back">
 			<h1>Jaime Lannister</h1>
-            <h2>Head of the King's Guard</h2>
+            <h2>"Head of the King's Guard"</h2>
             <p>Jaime previously served in the Kingsguard of Aerys Targaryen, known as the Mad King, before infamously backstabbing him during the Sack of King's Landing, earning Jaime the nickname of the Kingslayer. He continued to serve in the Kingsguard of Robert Baratheon, and as Lord Commander for Robert's alleged sons Joffrey and Tommen. However, a confrontation with the Faith of the Seven led to his dismissal from the sworn order.</p>
             <a href="mailto:Jaimelannister@hotmail.com?Subject=What's%20up,%20King%20Slayer?"><i className="fas fa-envelope"></i></a>
 		</div>
@@ -177,7 +176,7 @@ SO MUCH MORE.</h1>
 		</div>
 		<div className="back">
 			<h1>Cersei Lannister</h1>
-            <h2>Queen of the Seven  Kingdoms</h2>
+            <h2>"Queen of the Seven  Kingdoms"</h2>
             <p>
                 After the assassinations of Joffrey and Myrcella and Tommen's suicide in the wake of the destruction of the Great Sept of Baelor, Cersei assumed the throne under the name of Cersei of the House Lannister, the First of Her Name, Queen of the Andals and the First Men, Protector of the Seven Kingdoms.
             </p>
@@ -190,10 +189,10 @@ SO MUCH MORE.</h1>
 {/* End of Team Cards */}
                         </div>
         
-        <div className="Clone">
+        <div className="clone">
         <h1 className="section-titles">Clone</h1>
             <p>
-                This website is a quasi-clone of Override Films's main website.  The social media icons in the footer redirect to their company's respective social media pages, and their original logo at the center of the footer redirects to their actual website. The products and data used on this site is dumby data for the express 
+                This website is a quasi-clone of Override Films's main website.  The social media icons in the footer redirect to their company's respective social media pages, and their original logo at the center of the footer redirects to their actual website. The products and data used on this site is dumby data for the sole purpose of emulating the stylistic elements of the original website while adding the functionality required for an online store and cart.
             </p> 
         </div>
         </div>  
