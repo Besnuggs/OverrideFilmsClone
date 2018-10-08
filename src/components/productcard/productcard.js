@@ -3,7 +3,7 @@ import './productcard.css'
 
 function ProductCard(props){
     
-console.log(props)
+
 return(
     <div className="wrapper">
     <div className="product-card">

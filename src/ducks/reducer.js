@@ -11,7 +11,6 @@ const UPDATE_AMOUNT = "UPDATE_AMOUNT"
 
 // Action Creators
 export function addToShopCart(num) {
-    console.log(num)
     return {
         type: ITEMS_IN_SHOPPING_CART,
         payload: num

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './about.css'
 import {Link} from 'react-router-dom'
 import $ from 'jquery'
-import {TweenLite, Back} from 'gsap/TweenMax'
+
 
 
 

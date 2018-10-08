@@ -23,7 +23,9 @@ class Cart extends Component {
         this.increaseQuantity = this.increaseQuantity.bind(this)
         this.decreaseQuantity = this.decreaseQuantity.bind(this)
         this.deleteCartData = this.deleteCartData.bind(this)
+        this.deleteCartItems = this.deleteCartItems.bind(this)
     }
+
 
     increaseQuantity(cart_id, quantity){
         quantity++
@@ -107,9 +109,17 @@ axios.post('/api/email/').then()
         alert('Thank you for your purchase. A confirmation email has been sent!')
         this.props.history.push('/#/')
 }
+
+deleteCartItems(){
+    let {addToShopCart} = this.props
+    axios.delete('/api/cartData/').then((res) => {
+        this.setState({subtotal: 0, amount: 0})
+        addToShopCart(0)
+    })
+    this.props.history.push('/shop')
+}
     
     render() {
-    console.log(this.state)
     let {cartItems} = this.state
     let cart = cartItems.map((Info, Index) => {
         const {name, price, frontal_img, cart_id, quantity} = Info
@@ -150,7 +160,7 @@ axios.post('/api/email/').then()
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
                 amount={this.state.amount * 100}
                 />
-                 <span className="delete-cart" onClick={() => this.deleteCartData}>Delete Cart</span>
+                 <span className="delete-cart" onClick={() => this.deleteCartItems()}>Delete Cart</span>
                 </div>
                
 

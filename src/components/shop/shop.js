@@ -35,7 +35,6 @@ axios.put(`/api/products/quantity`).then()
 
 addToCart(id){
 let {addToShopCart} = this.props
-console.log(id)
 axios.post(`/api/cart/`, {id}).then((res) => {
     addToShopCart(res.data.length)
 })

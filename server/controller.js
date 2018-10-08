@@ -47,10 +47,9 @@ addToCart: (req,res,next) => {
     const {id} = req.body
     const product_id = id
     const quantity = 1
-    const db = req.app.get('db');
-    // db.checkCart({user_id, product_id}).then(cart => {
-    //     if (cart)
-    // })
+    const db = req.app.get('db')
+    db.checkCart({product_id}).then((response) => {
+    if (response.length === 0) {
     db.addToCart({user_id, product_id, quantity})
     .then(cart => {
         res.status(200).send(cart)
@@ -58,6 +57,10 @@ addToCart: (req,res,next) => {
         console.log(err);
         res.status(500).send(err)
     })
+    } else {
+        response.length
+    }
+ })    
 },
 deleteProduct: (req,res,next) => {
    const {cart_id} = req.params
