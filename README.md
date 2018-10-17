@@ -27,3 +27,7 @@ Functional Additions:
 *
 
 <IMG>
+
+DISCLAIMER
+
+OverriddenFilms is a non-commercial personal project meant to be a prototype of a small business for future e-commerce solutions. This project was used to develop and demonstrate full-stack concepts.
