@@ -1,33 +1,36 @@
-This is a clone of Override Films's website (www.overridefilms.com) with added e-commerce functionality.  This project was created in response to an assignment given at DevMountain to demonstrate key concepts which I built from scratch in 3 weeks. 
+<p>A clone of a local film production company's website, overridefilms.com, with added e-commerce functionality in the form of a mock-shop and cart. This was an exercise in styling by learning new techniques such as Parallax, manipulating video dimensions as a background, and adding CSS transformation properties to employee cards for 3-D flip animations. This was built in 2 weeks. </p>
 
-<IMG>
+<img src="https://s3.amazonaws.com/bradypersonal/overriddenfilmshomepage.png" alt="landing page of Overridden Films">
 
-MAJOR TECHNOLOGIES
+<h2>MAJOR TECHNOLOGIES</h2>
+<p>React with Redux</p>
+<p>JavaScript (ES6)</p>
+<p>CSS3 with Flexbox</p>
+<p>SASS</p>
+<p>Node</p>
+<p>Express</p>
+<p>Massive</p>
+<p>PostgreSQL</p>
+<p>Stripe</p>
 
-React with Redux
-JavaScript (ES6)
-CSS3 with Flexbox
-SASS
-Node
-Express
-Massive
-PostgreSQL
-Stripe
+<h2>Stylistic Features:</h2>
+<p>*Parallax</p>
+<p>*CSS3 with Flexbox</p>
+<p>*Transform Property for 3D animations</p>
+<p>*React-Vimeo-Video for Video Background Manipulation</p>
 
-Stylistic Features:
-*
-*
-*
+<img src="https://s3.amazonaws.com/bradypersonal/Overriddenfilmsshop.png" alt="Shop of Overridden Films">
 
-<IMG>
+<h2>Functional Additions:</h2>
+<p>*Users can login via Auth0</p>
+<p>*Users can select items from the shop menu, filter through shop items, and transfer items to cart view.</p>
+<p>*Redux keeps track of number of items within cart.</p>
+<p>*PostgreSQL keeps track of specific items and quantities to each user.</p>
+<p>*Stripe to handle payments</p>
+<p>*Nodemailer to send confirmation email upon checkout</p>
 
-Functional Additions:
-*
-*
-*
+<img src="https://s3.amazonaws.com/bradypersonal/overridenfilmscart.png" alt="Cart of Overridden Films">
 
-<IMG>
+<h2>DISCLAIMER</h2>
 
-DISCLAIMER
-
-OverriddenFilms is a non-commercial personal project meant to be a prototype of a small business for future e-commerce solutions. This project was used to develop and demonstrate full-stack concepts.
+<p>OverriddenFilms is a non-commercial personal project meant to be a prototype of a small business for future e-commerce solutions. This project was used to develop and demonstrate full-stack concepts.</p>
