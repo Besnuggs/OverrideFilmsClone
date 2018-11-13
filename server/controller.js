@@ -130,6 +130,7 @@ getStickers: (req, res, next) => {
     })
 },
 handlePayment: (req, res) => {
+        console.log(stripe)
         const { amount, token:{id}} = req.body
         stripe.charges.create(
             {

@@ -94,6 +94,7 @@ class Cart extends Component {
     }
 
     onToken = (token) => {
+        console.log(token.card)
         token.card = void 0
         axios.post('/api/payment/', {token, amount: this.state.amount * 100}).then()
         this.deleteCartData()
@@ -106,8 +107,9 @@ axios.delete('/api/cartData/').then((res) => {
     addToShopCart(0)
 })
 axios.post('/api/email/').then()
-        alert('Thank you for your purchase. A confirmation email has been sent!')
+        // alert('Thank you for your purchase. A confirmation email has been sent!')
         this.props.history.push('/#/')
+        alert('Thank you for your purchase. A confirmation email has been sent!')
 }
 
 deleteCartItems(){
