@@ -1,0 +1,43 @@
+// Media Query Mixins
+@mixin mediaSm {
+  @media screen and (max-width: 500px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mediaSmLandScape {
+  @media screen and (max-width: 500px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+
+@mixin mediaMd {
+  @media screen and (max-width: 768px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mediaMdLandScape {
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mediaLgLandScape {
+  @media screen and (min-width: 769px) and (max-width: 1170px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) and (orientation: portrait) {
+    @content;
+  }
+}

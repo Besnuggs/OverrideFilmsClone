@@ -109,7 +109,7 @@ return (
      <div className="shop">
 
 
-         <h1 className="title">Overridden Films Shop</h1>
+         <h1 className="shop-title">Overridden Films Shop</h1>
          
          <div className="filter">
          <span onClick={this.displayAll}>All</span>

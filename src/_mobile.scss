@@ -1,0 +1,159 @@
+// Widescreens
+  @include mediaXl {
+    
+  }
+  
+  // Desktops & Laptops
+  @include mediaLg {
+   
+  }
+  
+  @include mediaLgLandScape {
+   
+  
+  }
+  
+  // Tablets & Small Laptops
+  @include mediaMd {
+    
+  
+  }
+  
+  @include mediaMdLandScape{
+  
+  
+  }
+  
+  
+  // Smartphones
+  @include mediaSm {
+//footer
+.footer{
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-media{
+    width:40%;
+}
+
+.facebook, .twitter, .vimeo, .instagram, .youtube{
+    width: 100%;
+    height: 100%;
+}
+
+.OG-website{
+    width:50%;
+}
+
+// .address{
+//     visibility: hidden;
+// }
+
+    //header
+    .header_bar{
+        // width: 100vw;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    .Override_logo, .title{
+        visibility: hidden;
+    }
+
+    .links{
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        left: 0;
+    }
+
+    //dashboard
+    
+
+
+    
+
+    //about
+    .about-wrapper{
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        margin-left: -80px;
+    }
+
+    .section{
+        width: 100%;
+    }
+
+    #counter{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .flip-container{
+        display:flex;
+        flex-direction: column;
+        margin-left: 60px;
+        margin-bottom: 20px;
+        padding-bottom: 60px;
+    }
+
+    // Shop
+    .shop{
+        margin-left: -40px;
+        overflow-x:hidden;
+    }
+    .shop-title{
+        font-size: 28px;
+    }
+
+    .filter{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .filter span{
+        margin: 5px;
+    }
+
+    .shop-wrapper{
+        display:flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .product-card{
+        margin:5px;
+    }
+
+    //Cart
+    .cart-body{
+        display:flex;
+        flex-direction: column;
+        
+    }
+
+    .checkout-table{
+    width: 100vw;
+    }
+
+    .cart-wrapper{
+    display: flex;
+    flex-direction: column;
+    }
+  }

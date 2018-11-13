@@ -24,10 +24,7 @@ class Footer extends Component {
             <a href="http://overridefilms.com/"><img className="OverrideLogo" src={overrideOGLogo} alt="original-site"></img></a>
             </div>
 
-            <div className="address">
-            <p>In a room named after a mountain @</p> 
-            <p>560 S 100 W St, Provo, UT 84601</p>
-            </div> 
+           
 
             </div>
         )

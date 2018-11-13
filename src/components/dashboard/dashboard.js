@@ -11,6 +11,7 @@ class Dashboard extends Component {
 
             <div className="background-video">
             <Vimeo
+            className="dash-vid"
             video="129610347"
             autoplay="true"
             muted="true"
