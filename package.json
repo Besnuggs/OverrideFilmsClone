@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@u-wave/react-vimeo": "^0.5.0",
+    "@vimeo/player": "^2.6.5",
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
