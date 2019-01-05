@@ -228,7 +228,8 @@ userData: (req,res, next) => {
     }
 },
 logout: (req, res, next) => {
+    console.log(req.session)
     req.session.destroy();
-    res.redirect(`${REACT_APP_LOGIN}`)
-}  
+    res.redirect(`https://${REACT_APP_DOMAIN}/v2/logout`)
+} 
 }

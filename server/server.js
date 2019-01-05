@@ -26,8 +26,6 @@ app.use(session({
     saveUninitialized:true
   }))
 
-// app.use(checkUserSession)
-
 app.use((req,res,next) => {
     if (ENVIRONMENT === 'dev') {
         req.app.get('db').set_data().then(userData => {
@@ -42,7 +40,7 @@ app.use((req,res,next) => {
 // *******AUTH0***************************//
 app.get(`/auth/callback/`, ctrl.login)
 app.get(`/api/user-data/`, ctrl.userData) 
-app.get('/logout/', ctrl.logout) 
+app.get('/api/logout', ctrl.logout)
 
 
 // ************ENDPOINTS**************** //
